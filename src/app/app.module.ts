@@ -17,6 +17,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { MainComponent } from './pages/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     SidebarComponent,
     ContentComponent,
     MainComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
