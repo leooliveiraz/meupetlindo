@@ -10,9 +10,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
+import { MainComponent } from './pages/main/main.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -21,6 +25,7 @@ import { ContentComponent } from './content/content.component';
     ToolbarComponent,
     SidebarComponent,
     ContentComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ import { ContentComponent } from './content/content.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    MatGridListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
