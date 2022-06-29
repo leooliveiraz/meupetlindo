@@ -1,0 +1,6 @@
+<div class="center-align" *ngIf="!isAutenthicated">
+  <button mat-raised-button color="primary" (click)="loginWithGoogle()">
+    <fa-icon [size]="'lg'" [icon]="googleIcon"></fa-icon>
+    Acessar com Google
+  </button>
+</div>

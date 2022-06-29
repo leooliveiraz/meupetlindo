@@ -12,12 +12,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { OAuthModule } from 'angular-oauth2-oidc'
 
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ContentComponent } from './layout/content/content.component';
 import { MainComponent } from './pages/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './pages/about/about.component';
+import { LoginGoogleComponent } from './components/login-google/login-google.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -28,10 +32,12 @@ import { AboutComponent } from './pages/about/about.component';
     ContentComponent,
     MainComponent,
     AboutComponent,
+    LoginGoogleComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
@@ -40,7 +46,9 @@ import { AboutComponent } from './pages/about/about.component';
     MatDividerModule,
     MatCardModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GOOGLE_OAUTH2: '860566026552-hgk6p95nk83ns12skuh6dd4r279jcemf.apps.googleusercontent.com'
 };
 
 /*
