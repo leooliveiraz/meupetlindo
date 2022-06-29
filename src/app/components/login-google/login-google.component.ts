@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GoogleAuthService } from 'src/app/services/auth/google-auth.service';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-google',
   templateUrl: './login-google.component.html',
-  styleUrls: ['./login-google.component.css']
+  styleUrls: ['./login-google.component.css'],
 })
 export class LoginGoogleComponent implements OnInit {
-  
   googleIcon = faGoogle;
   isAutenthicated = false;
-  constructor(private googleAuth: GoogleAuthService) { }
+  
+  constructor(private googleAuth: GoogleAuthService) {}
 
   ngOnInit(): void {
-    this.isAutenthicated = this.googleAuth.isAuthenticated()
-    console.log(this.isAutenthicated)
+    this.googleAuth.configure();
+    this.isAutenthicated = this.googleAuth.isAuthenticated();
   }
 
   loginWithGoogle() {
-    this.googleAuth.loginWithGoogle()
+    this.googleAuth.loginWithGoogle();
   }
-
-  logout() {
-    this.googleAuth.logout();
-  }
-
 }

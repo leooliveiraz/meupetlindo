@@ -22,6 +22,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { LoginGoogleComponent } from './components/login-google/login-google.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MyAnimalsComponent } from './pages/my-animals/my-animals.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MainComponent,
     AboutComponent,
     LoginGoogleComponent,
+    MyAnimalsComponent,
   ],
   imports: [
     BrowserModule,

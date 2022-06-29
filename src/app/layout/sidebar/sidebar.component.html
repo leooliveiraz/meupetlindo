@@ -1,17 +1,19 @@
 <mat-sidenav-container hasBackdrop="false">
-  <mat-sidenav opened mode="side">
+  <mat-sidenav opened mode="side" class="sidebar">
     <mat-nav-list>
-      <a mat-list-item href="#">Meus bichinhos</a>
-      <a mat-list-item href="#">Adicionar um animalzinho</a>
-      <mat-divider></mat-divider>
-      <a mat-list-item href="#">Antipulgas</a>
-      <a mat-list-item href="#">Exames</a>
-      <a mat-list-item href="#">Medicamento</a>
-      <a mat-list-item href="#">Peso</a>
-      <a mat-list-item href="#">Vacina</a>
-      <a mat-list-item href="#">Vermifugo</a>
-      <mat-divider></mat-divider>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="/my-animals">Meus bichinhos</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Adicionar um animalzinho</a>
+      <mat-divider *ngIf="isAutenthicated" ></mat-divider>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Antipulgas</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Exames</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Medicamento</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Peso</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Vacina</a>
+      <a mat-list-item *ngIf="isAutenthicated" href="#">Vermifugo</a>
+      <mat-divider *ngIf="isAutenthicated" ></mat-divider>
       <a mat-list-item routerLink="/about">Sobre</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item *ngIf="isAutenthicated" (click)="logout()"> Sair </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

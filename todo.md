@@ -8,7 +8,8 @@ Create Exams Page
 Create Animal Page
 Create Weight Record Page
 Create Drugs Page
-Login functionality
+Login functionality {cm:2022-06-29}
 Create main page {cm:2022-06-27}
 Create Share Animals funcionality
 Create routing {cm:2022-06-27}
+Create Logout {cm:2022-06-29}
