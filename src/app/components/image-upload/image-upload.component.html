@@ -1,0 +1,13 @@
+<div class="center">
+  <input type="file" style="visibility: hidden" (change)="mudar($event)" #img />
+  <img
+    [src]="src ? src : srcImage || 'assets/icons/communication.png'"
+    class="circle"
+    (click)="img.click()"
+  />
+  <button mat-mini-fab (click)="img.click()" 
+    color="primary"
+    type="button" class="float-button">
+    <fa-icon [icon]="cameraIcon"></fa-icon>
+  </button>
+</div>

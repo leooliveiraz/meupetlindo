@@ -1,1 +1,121 @@
-<p>my-animals works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Meus Bichinhos!</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="white-text text-darken-1 center-align" *ngIf="carregando">
+      Por favor aguarde, estamos carregando as informações dos seus bichinhos.
+    </div>
+    <mat-list
+      *ngIf="
+        (lista != null && lista.length > 0) ||
+        (listaCompartilhados != null && listaCompartilhados.length > 0)
+      "
+      class="collection"
+    >
+      <ng-container *ngFor="let item of lista">
+        <mat-list-item>
+          <img
+            matListAvatar
+            width="48"
+            class="img"
+            [src]="
+              item.srcImg
+                ? item.srcImg
+                : item.idArquivo
+                ? urlImagem + item.idArquivo
+                : 'assets/icons/animals-allowed.png'
+            "
+          />
+
+          <div class="pointer animal" [routerLink]="['/painel/' + item.id]">
+            {{ item.nome }}
+          </div>
+
+          <a
+            class="red-text pointer icone"
+            (click)="excluir(item.id)"
+            mz-secondary-content
+          >
+            <fa-icon [icon]="trashIcon"></fa-icon
+          ></a>
+
+          <a
+            class="pointer icone"
+            (click)="abrirCompartilhamento(item)"
+            mz-secondary-content
+          >
+            <fa-icon [icon]="shareIcon"></fa-icon
+          ></a>
+
+          <a
+            [routerLink]="['/edit/' + item.id]"
+            class="green-text icone"
+            mz-secondary-content
+          >
+            <fa-icon [icon]="editIcon"></fa-icon>
+          </a>
+
+          <a
+            [routerLink]="['/painel/' + item.id]"
+            class="deep-purple-text text-darken-4 icone"
+            mz-secondary-content
+          >
+            <fa-icon [icon]="openIcon"></fa-icon>
+          </a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+
+      <ng-container *ngFor="let item of listaCompartilhados">
+        <mat-list-item >
+          <img
+            matListAvatar
+            width="48"
+            class="img"
+            [src]="
+              item.srcImg
+                ? item.srcImg
+                : item.idArquivo
+                ? urlImagem + item.idArquivo
+                : 'assets/icons/animals-allowed.png'
+            "
+          />
+
+          <div class="pointer animal" [routerLink]="['/painel/' + item.id]">
+            <span> {{ item.nome }} </span>
+            <div class="chip chip-separator yellow purple-text darken-4-text">
+              Compartilhado
+            </div>
+          </div>
+
+          <a
+            [routerLink]="['/painel/' + item.id]"
+            class="deep-purple-text text-darken-4 icone"
+            mz-secondary-content
+          >
+            <fa-icon [icon]="openIcon"></fa-icon
+          ></a>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+
+    <div
+      class="white-text text-darken-1 center-align"
+      *ngIf="!carregando && lista.length === 0"
+    >
+      <p>
+        Você ainda não possui nenhum animalzinho cadastrado, clique no botão
+        abaixo para cadastrar.
+      </p>
+      <br />
+      <p class="center-align">
+        <button mz-button class="purple accent-3" [routerLink]="['/cadastrar']">
+          Cadastrar um Animalzinho
+        </button>
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>

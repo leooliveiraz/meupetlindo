@@ -1,0 +1,18 @@
+.img-cropper {
+  max-height: 24em !important;
+}
+
+.cropper-area {
+  max-width: 40em;
+  margin-bottom: 1em;
+}
+
+.centralizar {
+  margin: auto;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.distancia {
+  margin-right: 1em;
+}

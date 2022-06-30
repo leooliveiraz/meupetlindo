@@ -16,7 +16,7 @@ const oAuthConfig: AuthConfig = {
   providedIn: 'root',
 })
 export class GoogleAuthService {
-  
+
   public authStatus = new BehaviorSubject(this.isAuthenticated());
 
   constructor(private authService: OAuthService, private router: Router) {
@@ -59,6 +59,10 @@ export class GoogleAuthService {
     return JSON.parse(usuarioJSON ? usuarioJSON : '');
   }
 
+  getIdToken() {
+    return this.authService.getIdToken();
+  }
+  
   isAuthenticated() {
     return localStorage.getItem('profile') == null ? false : true;
   }

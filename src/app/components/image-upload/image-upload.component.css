@@ -1,0 +1,50 @@
+img {
+  border: 5px;
+  border-color: #fdd835;
+  border-style: solid;
+  height: 128px;
+  width: 128px;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 50%;
+  
+}
+
+input {
+  width: 0px;
+}
+
+.float-button {
+  bottom: 15px;
+  right: 25px;
+}
+
+.center{
+  margin: auto;
+  text-align: center;
+  margin-bottom: 1em;
+}
+::ng-deep .modal{
+  max-height: 90% !important;
+  max-height: 90% !important;
+  top: 05% !important;
+}
+
+.imgCropper{
+  max-height: 24em !important;
+}
+
+@media (max-width: 600px) {
+  img {
+    height: 180px;
+    width: 180px;
+  }
+
+  .float-button {
+    bottom: 10px;
+    right: 42px;
+    width: 40px;
+    height: 40px;
+  }
+
+}

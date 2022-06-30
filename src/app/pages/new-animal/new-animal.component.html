@@ -1,0 +1,87 @@
+<mat-card class="card-pages">
+  <mat-card-title>
+    <h1>Cadastrar um Animalzinho!</h1>
+  </mat-card-title>
+  <mat-card-subtitle> Informe os dados do seu bichinho. </mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider><br />
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <input type="hidden" [(ngModel)]="id" name="id" />
+      <div class="center-align">
+        <app-image-upload
+          [src]="srcImagem"
+          (changeImageEvent)="alterarImagem($event)"
+        ></app-image-upload>
+      </div>
+      <mat-form-field class="inputs">
+        <mat-label>Qual o nome do seu bichinho?</mat-label>
+        <input
+          matInput
+          placeholder="Loki"
+          required
+          [maxLength]="150"
+          [(ngModel)]="nome"
+          name="nome"
+        /> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>E a data de nascimento?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerNascimento"
+          [(ngModel)]="dataNascimento"
+          name="dataNascimento"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNascimento></mat-datepicker> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Desde de quando esse bicinho está com você?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerAdocao"
+          [(ngModel)]="dataAdocao"
+          name="dataAdocao"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerAdocao"></mat-datepicker-toggle>
+        <mat-datepicker #pickerAdocao></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox
+        [(ngModel)]="declararObito"
+        name="declararObito"
+        class="inputs"
+        >Declarar Óbito</mat-checkbox
+      ><br>
+
+      <mat-form-field class="inputs" *ngIf="declararObito">
+        <mat-label>Sinto muito. Qual a data de óbito?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerObito"
+          [(ngModel)]="dataObito"
+          name="dataObito"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerObito"></mat-datepicker-toggle>
+        <mat-datepicker #pickerObito></mat-datepicker>
+      </mat-form-field>
+
+      <div class="right-align">
+        <br />
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="salvando"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

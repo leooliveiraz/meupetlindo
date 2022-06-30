@@ -1,0 +1,39 @@
+<h1>Recortar Imagem</h1>
+<mat-divider></mat-divider>
+<div class="cropper-area">
+  <div class="centralizar">
+    <button mat-flat-button type="button" (click)="rotateLeft()" class="distancia" color="primary">
+      <fa-icon [icon]="rotateLeftIcon"></fa-icon>
+    </button>
+    <button mat-flat-button type="button" (click)="rotateRight()" color="primary">
+      <fa-icon [icon]="rotateRightIcon"></fa-icon>
+    </button>
+  </div>
+  <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    #imageCropper
+    class="img-cropper"
+    [aspectRatio]="3 / 3"
+    [resizeToWidth]="256"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    [canvasRotation]="canvasRotation"
+    (loadImageFailed)="loadImageFailed()"
+  ></image-cropper>
+  <mat-divider></mat-divider>
+</div>
+<div>
+  <button
+    mat-flat-button
+    type="button"
+    (click)="concluirRecorte()"
+    color="primary"
+  >
+    Concluir
+  </button>
+  <button mat-flat-button type="button" mat-dialog-close="">Não recortar</button>
+
+</div>

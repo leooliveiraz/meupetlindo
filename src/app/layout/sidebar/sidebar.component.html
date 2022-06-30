@@ -2,7 +2,7 @@
   <mat-sidenav opened mode="side" class="sidebar">
     <mat-nav-list>
       <a mat-list-item *ngIf="isAutenthicated" routerLink="/my-animals">Meus bichinhos</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Adicionar um animalzinho</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="/new-animal">Adicionar um animalzinho</a>
       <mat-divider *ngIf="isAutenthicated" ></mat-divider>
       <a mat-list-item *ngIf="isAutenthicated" href="#">Antipulgas</a>
       <a mat-list-item *ngIf="isAutenthicated" href="#">Exames</a>
