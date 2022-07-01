@@ -2,13 +2,13 @@
   <mat-card-title>Informações do seu bichinho</mat-card-title>
   <mat-card-subtitle>Desça para ver todas as informações.</mat-card-subtitle>
   <mat-card-content>
-    <mat-divider></mat-divider><br>
+    <mat-divider></mat-divider><br />
     <section id="secao-info">
-      <div style="width: 100%; text-align: center;">
+      <div style="width: 100%; text-align: center">
         <app-animal-image [src]="srcImg"></app-animal-image>
       </div>
       <h1 class="">{{ animal?.nome }}</h1>
-      <mat-divider></mat-divider><br>
+      <mat-divider></mat-divider><br />
       <div class="" id="data-nascimento" *ngIf="animal?.dataNascimento">
         <fa-icon [icon]="cakeIcon" color="primary" size="lg"></fa-icon>
         {{ animal?.dataNascimento | date: "dd/MM/yyyy" }}
@@ -28,5 +28,77 @@
     </section>
     <mat-divider></mat-divider>
     <!-- <div *ngIf="!carregando"> -->
+  </mat-card-content>
+</mat-card>
+<br />
+<mat-card class="card-pages">
+  <mat-card-title>Registro de peso</mat-card-title>
+  <mat-card-subtitle
+    >Acompanhe todas as pesagens do seu bichinho.</mat-card-subtitle
+  >
+  <mat-card-content>
+    <mat-divider></mat-divider><br />
+    <section id="secao-peso">
+      <div class="yellow-text text-darken-1 center-align" *ngIf="!carregando">
+        <h4>Registro de Peso</h4>
+      </div>
+
+      <div
+        class="white-text text-darken-1 center-align"
+        *ngIf="!carregando && listaPeso.length === 0"
+      >
+        <p>
+          <span
+            >Parece que você ainda não adicionou um registro de pesagem para
+            esse bichinho.</span
+          >
+          <span *ngIf="animal.dono">
+            Clique no botão abaixo para adicionar.</span
+          >
+        </p>
+      </div>
+
+      <div
+        style="display: block"
+        *ngIf="listaPeso != null && listaPeso.length > 0"
+      >
+        <canvas
+          class="grafico"
+          baseChart
+          height="350"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [type]="'line'"
+        ></canvas>
+      </div>
+      <br />
+      
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="'/weight'"
+        *ngIf="animal.dono"
+        [queryParams]="{ animal: idAnimal }"
+      >
+        Registrar peso
+      </button>
+      <br />
+      <!-- <mz-collection *ngIf="listaPeso != null && listaPeso.length > 0">
+        <mz-collection-item *ngFor="let item of listaPeso">
+          Data: {{ item.dataPesagem | date: "dd/MM/yyyy" }}, Peso:
+          {{ item.peso }}
+          <a
+            class="red-text pointer"
+            (click)="excluirPeso(item.id)"
+            mz-secondary-content
+            *ngIf="animal.dono"
+          >
+            <i mz-icon-mdi [icon]="'delete'"></i
+          ></a>
+        </mz-collection-item>
+      </mz-collection> -->
+      <br />
+    </section>
   </mat-card-content>
 </mat-card>

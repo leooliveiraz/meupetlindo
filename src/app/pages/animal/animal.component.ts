@@ -134,7 +134,7 @@ export class AnimalComponent implements OnInit {
     this.pesoService.listarPorAnimal(this.idAnimal).subscribe(res => {
       this.listaPeso = res;
       this.carregando = false;
-      // this.configurarGrafico();
+      this.configurarGrafico();
     }, erro => this.carregando = false);
   }
 
