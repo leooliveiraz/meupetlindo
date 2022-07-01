@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { faPenToSquare, faShareFromSquare, faTrash, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faShareNodes, faTrash, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { AnimalService } from 'src/app/services/animal.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+
 
 @Component({
   selector: 'app-my-animals',
@@ -12,10 +16,11 @@ export class MyAnimalsComponent implements OnInit {
 
   trashIcon = faTrash;
   editIcon = faPenToSquare;
-  shareIcon = faShareFromSquare;
+  shareIcon = faShareNodes;
   openIcon = faUpRightFromSquare;
 
-  constructor(private service: AnimalService,) { }
+  constructor(private service: AnimalService,
+    private toastService: ToastService) { }
 
   ngOnInit(): void {
     this.carregar();
@@ -27,16 +32,33 @@ export class MyAnimalsComponent implements OnInit {
   urlImagem = `${environment.API_URL}arquivo/`;
 
   excluir(id: any) {
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Se confirmar, você irá excluir esse animalzinho e seu histórico.',
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sim'
+    }).then((result) => {
+      if (result.value) {
+        this.service.deletar(id).subscribe(res => {
+          this.toastService.create('success', 'Animalzinho Excluído!');
+          this.carregar();
+        }, erro => {
+          this.toastService.create('error', 'Não foi possível excluir esse Animalzinho! Tente novamente mais tarde');
+        });
+      }
+    });
   }
 
 
   carregar() {
     this.carregando = true;
     this.service.listar().subscribe(res => {
-        this.lista = res;
-        this.carregando = false;
-      }, erro => {
-        this.carregando = false;
+      this.lista = res;
+      this.carregando = false;
+    }, erro => {
+      this.carregando = false;
     });
 
     this.service.listarCompartilhados().subscribe(res => {

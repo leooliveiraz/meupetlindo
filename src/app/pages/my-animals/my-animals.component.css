@@ -1,0 +1,36 @@
+.item{
+  min-width: 30vw;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em 0em;
+  justify-content: space-between;
+}
+.item-name{
+  align-self: center;
+}
+
+.animal-info{
+  display: flex;
+  flex-direction: row;
+}
+
+img{
+  margin-right: 1em;
+  border-radius: 50%;
+}
+
+.align-right{
+  text-align: right;
+}
+.align-left{
+  text-align: left;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  min-width: 2em;
+}

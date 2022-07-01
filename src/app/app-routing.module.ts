@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
+import { AnimalComponent } from './pages/animal/animal.component';
 import { MainComponent } from './pages/main/main.component';
 import { MyAnimalsComponent } from './pages/my-animals/my-animals.component';
 import { NewAnimalComponent } from './pages/new-animal/new-animal.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'my-animals', component: MyAnimalsComponent , canActivate: [AuthGuardService]},
   { path: 'new-animal', component: NewAnimalComponent , canActivate: [AuthGuardService]},
   { path: 'edit/:id', component: NewAnimalComponent, canActivate: [AuthGuardService] },
+  { path: 'animal/:id', component: AnimalComponent, canActivate: [AuthGuardService] },
   { path: '', component: MainComponent },
 ];
 
