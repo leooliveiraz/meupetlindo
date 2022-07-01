@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -19,7 +20,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { NgChartsModule } from 'ng2-charts';
 
 
 import { OAuthModule } from 'angular-oauth2-oidc'
@@ -41,6 +42,8 @@ import { FormsModule } from '@angular/forms';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import { CropperDialogComponent } from './components/cropper-dialog/cropper-dialog.component';
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { AnimalImageComponent } from './components/animal-image/animal-image.component';
+import { WeightComponent } from './pages/weight/weight.component';
 
 
 @NgModule({
@@ -57,6 +60,8 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
     AnimalComponent,
     CropperDialogComponent,
     ImageUploadComponent,
+    AnimalImageComponent,
+    WeightComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +72,7 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
     MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatCheckboxModule,
     MatIconModule,
     MatButtonModule,
@@ -81,6 +87,7 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
     MatMomentDateModule,
     MatSnackBarModule,
     ImageCropperModule,
+    NgChartsModule,
     OAuthModule.forRoot()
   ],
   providers: [

@@ -1,0 +1,69 @@
+<mat-card class="card-pages card">
+  <mat-card-title>Registro de peso!</mat-card-title>
+  <mat-card-subtitle>Escolha o seu bichinho, e informe a data da pesagem e o peso.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <br />
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <mat-form-field class="inputs">
+        <mat-label>Escolha um Animalzinho</mat-label>
+        <mat-select [(ngModel)]="idAnimal" name="food" name="idAnimal" required>
+          <mat-option *ngFor="let item of listaAnimais" [value]="item.id"  class="option">
+            <div class="item">
+              <img
+              width="48"
+              class="img"
+              [src]="
+                item.idArquivo
+                  ? urlImagem + item.idArquivo
+                  : 'assets/icons/animals-allowed.png'
+              "
+              style="align-self: flex-start"
+              />
+              <label>
+                {{ item.nome }}
+              </label>
+            </div>
+          </mat-option>
+        </mat-select> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Quando foi feita a pesagem?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="dataPesagem"
+          name="dataPesagem" required
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> </mat-form-field
+      ><br />
+      <mat-form-field class="inputs">
+        <mat-label>Qual o peso do seu bichinho?</mat-label>
+        <input
+          matInput
+          placeholder="Loki"
+          required
+          [maxLength]="150"
+          [(ngModel)]="peso"
+          name="peso"
+          required
+        /> </mat-form-field
+      ><br />
+
+      <div class="right-align">
+        <br />
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="salvando"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

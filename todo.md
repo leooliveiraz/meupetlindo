@@ -6,7 +6,7 @@ Create My Animals Page
 Create Add Animal Page {cm:2022-06-30}
 Create Exams Page
 Create Animal Page
-Create Weight Record Page
+Create Weight Record Page {cm:2022-07-01}
 Create Drugs Page
 Login functionality {cm:2022-06-29}
 Create main page {cm:2022-06-27}

@@ -4,12 +4,12 @@
       <a mat-list-item *ngIf="isAutenthicated" routerLink="/my-animals">Meus bichinhos</a>
       <a mat-list-item *ngIf="isAutenthicated" routerLink="/new-animal">Adicionar um animalzinho</a>
       <mat-divider *ngIf="isAutenthicated" ></mat-divider>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Antipulgas</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Exames</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Medicamento</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Peso</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Vacina</a>
-      <a mat-list-item *ngIf="isAutenthicated" href="#">Vermifugo</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="antiflea">Antipulgas</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="exams">Exames</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="drugs">Medicamento</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="weight">Peso</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="vaccine">Vacina</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="vermifuge">Vermifugo</a>
       <mat-divider *ngIf="isAutenthicated" ></mat-divider>
       <a mat-list-item routerLink="/about">Sobre</a>
       <mat-divider></mat-divider>

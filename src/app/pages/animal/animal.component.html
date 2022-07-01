@@ -1,1 +1,32 @@
-<p>animal works!</p>
+<mat-card class="card-pages">
+  <mat-card-title>Informações do seu bichinho</mat-card-title>
+  <mat-card-subtitle>Desça para ver todas as informações.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider><br>
+    <section id="secao-info">
+      <div style="width: 100%; text-align: center;">
+        <app-animal-image [src]="srcImg"></app-animal-image>
+      </div>
+      <h1 class="">{{ animal?.nome }}</h1>
+      <mat-divider></mat-divider><br>
+      <div class="" id="data-nascimento" *ngIf="animal?.dataNascimento">
+        <fa-icon [icon]="cakeIcon" color="primary" size="lg"></fa-icon>
+        {{ animal?.dataNascimento | date: "dd/MM/yyyy" }}
+      </div>
+      <div class="" *ngIf="animal?.dataAdocao" id="data-adocao">
+        <fa-icon [icon]="heartIcon" color="error" size="lg"></fa-icon>
+        {{ animal?.dataAdocao | date: "dd/MM/yyyy" }}
+      </div>
+      <div class="" *ngIf="animal?.dataObito" id="data-obito">
+        <fa-icon [icon]="starIcon" color="accent" size="lg"></fa-icon>
+        {{ animal?.dataObito | date: "dd/MM/yyyy" }}
+      </div>
+      <br />
+      <div class="" *ngIf="carregando">
+        Por favor aguarde, estamos carregando as informações do seu bichinho.
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <!-- <div *ngIf="!carregando"> -->
+  </mat-card-content>
+</mat-card>
