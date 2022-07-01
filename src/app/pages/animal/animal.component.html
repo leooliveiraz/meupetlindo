@@ -10,11 +10,15 @@
       <h1 class="">{{ animal?.nome }}</h1>
       <mat-divider></mat-divider><br />
       <div class="" id="data-nascimento" *ngIf="animal?.dataNascimento">
-        <fa-icon [icon]="cakeIcon" color="primary" size="lg"></fa-icon>
-        {{ animal?.dataNascimento | date: "dd/MM/yyyy" }}
+        <div>
+          <fa-icon [icon]="cakeIcon" color="primary" size="lg" st></fa-icon>
+        </div>
+        <label>{{ animal?.dataNascimento | date: "dd/MM/yyyy" }}</label>
       </div>
       <div class="" *ngIf="animal?.dataAdocao" id="data-adocao">
-        <fa-icon [icon]="heartIcon" color="error" size="lg"></fa-icon>
+        <div>
+          <fa-icon [icon]="heartIcon" color="error" size="lg"></fa-icon>
+        </div>
         {{ animal?.dataAdocao | date: "dd/MM/yyyy" }}
       </div>
       <div class="" *ngIf="animal?.dataObito" id="data-obito">
@@ -39,10 +43,6 @@
   <mat-card-content>
     <mat-divider></mat-divider><br />
     <section id="secao-peso">
-      <div class="yellow-text text-darken-1 center-align" *ngIf="!carregando">
-        <h4>Registro de Peso</h4>
-      </div>
-
       <div
         class="white-text text-darken-1 center-align"
         *ngIf="!carregando && listaPeso.length === 0"
@@ -72,8 +72,9 @@
           [type]="'line'"
         ></canvas>
       </div>
+      <mat-divider></mat-divider>
       <br />
-      
+
       <button
         mat-raised-button
         color="primary"
@@ -84,20 +85,28 @@
         Registrar peso
       </button>
       <br />
-      <!-- <mz-collection *ngIf="listaPeso != null && listaPeso.length > 0">
-        <mz-collection-item *ngFor="let item of listaPeso">
-          Data: {{ item.dataPesagem | date: "dd/MM/yyyy" }}, Peso:
-          {{ item.peso }}
-          <a
-            class="red-text pointer"
-            (click)="excluirPeso(item.id)"
-            mz-secondary-content
-            *ngIf="animal.dono"
-          >
-            <i mz-icon-mdi [icon]="'delete'"></i
-          ></a>
-        </mz-collection-item>
-      </mz-collection> -->
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      <div *ngIf="listaPeso != null && listaPeso.length > 0">
+        
+        <ng-container *ngFor="let item of listaPeso">
+          <div class="list-item">
+            <div style="align-self: center">
+              Data: {{ item.dataPesagem | date: "dd/MM/yyyy" }}, Peso:
+              {{ item.peso }}
+            </div>
+            <button mat-icon-button color="error" style="align-self: center">
+              <fa-icon
+                [icon]="deleteIcon"
+                (click)="excluirPeso(item.id)"
+                *ngIf="animal.dono"
+              ></fa-icon>
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </div>
       <br />
     </section>
   </mat-card-content>

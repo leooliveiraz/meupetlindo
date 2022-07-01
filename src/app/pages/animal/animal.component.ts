@@ -1,12 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faCakeCandles, faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCakeCandles, faHeart, faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { AnimalService } from 'src/app/services/animal.service';
 import { AntiPulgaService } from 'src/app/services/antiPulga.service';
 import { ExameService } from 'src/app/services/exame.service';
 import { MedicarService } from 'src/app/services/medicar.service';
 import { PesoService } from 'src/app/services/peso.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { VacinaService } from 'src/app/services/vacina.service';
 import { VermifugoService } from 'src/app/services/vermifugo.service';
 import { environment } from 'src/environments/environment';
@@ -22,6 +23,7 @@ export class AnimalComponent implements OnInit {
   cakeIcon = faCakeCandles;
   heartIcon = faHeart;
   starIcon = faStar;
+  deleteIcon = faTrash;
 
   idAnimal: any;
   carregando = false;
@@ -77,7 +79,8 @@ export class AnimalComponent implements OnInit {
     private vermifugoService: VermifugoService,
     private vacinaService: VacinaService,
     private medicacaoService: MedicarService,
-    private exameService: ExameService,) { }
+    private exameService: ExameService,
+    private toastService: ToastService) { }
 
   ngOnInit(): void {
     this.idAnimal = this.activatedRoute.snapshot.paramMap.get('id');
@@ -163,6 +166,28 @@ export class AnimalComponent implements OnInit {
       this.listaAntiPulga = res;
       this.carregando = false;
     }, erro => this.carregando = false);
+  }
+
+  excluirPeso(id: any) {
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Ao confirmar essa ação, você concorda em excluir essa pesagem.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sim'
+    }).then((result) => {
+      if (result.value) {
+        this.pesoService.deletar(id).subscribe(res => {
+          this.toastService.create('success','Pesagem Excluída!');
+          this.carregarPesos();
+        }, erro => {
+          this.toastService.create('error','Não foi possível excluir essa pesagem! Tente novamente mais tarde');
+        });
+      }
+    });
   }
 
 }

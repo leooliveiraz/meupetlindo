@@ -1,0 +1,13 @@
+.list-item{
+  min-width: 30vw;
+  display: flex;
+  flex-direction: row;
+  margin: 0.4em 0em;
+  justify-content: space-between;
+  align-self: center;
+}
+
+div fa-icon {
+  margin-right: 1em;
+  width: 3em;
+}

@@ -44,6 +44,9 @@ import { CropperDialogComponent } from './components/cropper-dialog/cropper-dial
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { AnimalImageComponent } from './components/animal-image/animal-image.component';
 import { WeightComponent } from './pages/weight/weight.component';
+import { VaccineComponent } from './pages/vaccine/vaccine.component';
+import { DrugsComponent } from './pages/drugs/drugs.component';
+import { ExamsComponent } from './pages/exams/exams.component';
 
 
 @NgModule({
@@ -62,6 +65,9 @@ import { WeightComponent } from './pages/weight/weight.component';
     ImageUploadComponent,
     AnimalImageComponent,
     WeightComponent,
+    VaccineComponent,
+    DrugsComponent,
+    ExamsComponent,
   ],
   imports: [
     BrowserModule,
