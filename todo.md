@@ -5,9 +5,9 @@ Create a Sidebar {cm:2022-06-24}
 Create My Animals Page {cm:2022-07-01}
 Create Add Animal Page {cm:2022-06-30}
 Create Exams Page {cm:2022-07-01}
-Create Animal Page
+Create Animal Page {start:2022-06-28T23:31:41}
 Create Weight Record Page {cm:2022-07-01}
-Create Drugs Page
+Create Drugs Page {cm:2022-07-01}
 Login functionality {cm:2022-06-29}
 Create main page {cm:2022-06-27}
 Create Share Animals funcionality
