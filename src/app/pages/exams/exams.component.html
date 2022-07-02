@@ -1,1 +1,77 @@
-<p>exams works!</p>
+<mat-card class="card-pages card">
+  <mat-card-title>Registro de exames!</mat-card-title>
+  <mat-card-subtitle
+    >Escolha o seu bichinho, e informe o exame e a data do exame.</mat-card-subtitle
+  >
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <br />
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <mat-form-field class="inputs">
+        <mat-label>Escolha um Animalzinho</mat-label>
+        <mat-select [(ngModel)]="idAnimal" name="food" name="idAnimal" required>
+          <mat-option
+            *ngFor="let item of listaAnimais"
+            [value]="item.id"
+            class="option"
+          >
+            <div class="item">
+              <img
+                width="48"
+                class="img"
+                [src]="
+                  item.idArquivo
+                    ? urlImagem + item.idArquivo
+                    : 'assets/icons/animals-allowed.png'
+                "
+                style="align-self: flex-start"
+              />
+              <label>
+                {{ item.nome }}
+              </label>
+            </div>
+          </mat-option>
+        </mat-select> </mat-form-field
+      ><br />
+
+      
+      <mat-form-field class="inputs">
+        <mat-label>Qual exame seu bichinho realizou?</mat-label>
+        <input
+          matInput
+          placeholder="RX"
+          required
+          [maxLength]="150"
+          [(ngModel)]="nome"
+          name="nome"
+          required
+        /> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Qual foi a data do exame?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="dataExame"
+          name="dataExame"
+          required
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> </mat-form-field
+      ><br />
+
+      <div >
+        <br />
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
