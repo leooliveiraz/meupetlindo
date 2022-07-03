@@ -9,21 +9,45 @@
       </div>
       <h1 class="">{{ animal?.nome }}</h1>
       <mat-divider></mat-divider><br />
-      <div class="" id="data-nascimento" *ngIf="animal?.dataNascimento">
-        <div>
-          <fa-icon [icon]="cakeIcon" color="primary" size="lg" st></fa-icon>
+      <div class="flex" id="data-nascimento" *ngIf="animal?.dataNascimento">
+        <div class="info-icon">
+          <fa-icon
+            style="color: #673ab7"
+            [icon]="cakeIcon"
+            color="primary"
+            size="lg"
+            st
+          ></fa-icon>
         </div>
-        <label>{{ animal?.dataNascimento | date: "dd/MM/yyyy" }}</label>
-      </div>
-      <div class="" *ngIf="animal?.dataAdocao" id="data-adocao">
         <div>
-          <fa-icon [icon]="heartIcon" color="error" size="lg"></fa-icon>
+          <label>{{ animal?.dataNascimento | date: "dd/MM/yyyy" }}</label>
         </div>
-        {{ animal?.dataAdocao | date: "dd/MM/yyyy" }}
       </div>
-      <div class="" *ngIf="animal?.dataObito" id="data-obito">
-        <fa-icon [icon]="starIcon" color="accent" size="lg"></fa-icon>
-        {{ animal?.dataObito | date: "dd/MM/yyyy" }}
+      <div class="flex" *ngIf="animal?.dataAdocao" id="data-adocao">
+        <div class="info-icon">
+          <fa-icon
+            style="color: #f44336"
+            [icon]="heartIcon"
+            color="error"
+            size="lg"
+          ></fa-icon>
+        </div>
+        <div>
+          {{ animal?.dataAdocao | date: "dd/MM/yyyy" }}
+        </div>
+      </div>
+      <div class="flex" *ngIf="animal?.dataObito" id="data-obito">
+        <div class="info-icon">
+          <fa-icon
+            style="color: #ffd740"
+            [icon]="starIcon"
+            color="accent"
+            size="lg"
+          ></fa-icon>
+        </div>
+        <div>
+          {{ animal?.dataObito | date: "dd/MM/yyyy" }}
+        </div>
       </div>
       <br />
       <div class="" *ngIf="carregando">
@@ -35,6 +59,68 @@
   </mat-card-content>
 </mat-card>
 <br />
+<mat-card class="card-pages">
+  <mat-card-title>Registro de Exames</mat-card-title>
+  <mat-card-subtitle>Acompanhe o histórico de exames.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider><br />
+    <ng-container *ngFor="let item of listaExame">
+      <mat-card>
+        <strong>{{ item.nome }}</strong>
+        <br />
+        Data da Aplicação:
+        <strong>{{ item.dataExame | date: "dd/MM/yyyy" }}</strong>
+      </mat-card>
+      <br />
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+<br />
+
+<mat-card class="card-pages">
+  <mat-card-title>Registro de Medicação</mat-card-title>
+  <mat-card-subtitle>Acompanhe o histórico de medicação. </mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <br />
+    <ng-container *ngFor="let item of listaMedicacao">
+      <mat-card>
+        <span>{{ item.nome }}</span>
+        <br />
+        Data da Aplicação:
+        <strong>{{ item.dataMedicamento | date: "dd/MM/yyyy" }}</strong>
+        <br />
+        Próxima Aplicação:
+        <strong>{{ item.dataProxima | date: "dd/MM/yyyy" }}</strong>
+        <br />
+      </mat-card>
+      <br />
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+<br />
+
+<mat-card class="card-pages">
+  <mat-card-title>Registro de Vacinas</mat-card-title>
+  <mat-card-subtitle
+    >Acompanhe o histórico de vacinas do seu bichinho.</mat-card-subtitle
+  >
+  <mat-card-content>
+    <mat-divider></mat-divider><br />
+    <ng-container *ngFor="let item of listaVacina">
+      <mat-card>
+        {{item.nome}}<br />
+        Data da Aplicação:
+        <strong>{{ item.dataVacina | date: "dd/MM/yyyy" }}</strong>
+        <br />
+        Próxima Aplicação:
+        <strong>{{ item.dataProximaVacina | date: "dd/MM/yyyy" }}</strong>
+      </mat-card>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+<br />
+
 <mat-card class="card-pages">
   <mat-card-title>Registro de peso</mat-card-title>
   <mat-card-subtitle
@@ -89,7 +175,6 @@
       <mat-divider></mat-divider>
       <br />
       <div *ngIf="listaPeso != null && listaPeso.length > 0">
-        
         <ng-container *ngFor="let item of listaPeso">
           <div class="list-item">
             <div style="align-self: center">
