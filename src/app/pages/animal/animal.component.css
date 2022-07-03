@@ -20,3 +20,10 @@
 mat-card mat-card {
   margin-bottom: 1em;
 }
+
+
+@media (max-width: 600px) {
+  .card-pages{
+    width: initial;
+  }
+}

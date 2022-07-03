@@ -14,3 +14,4 @@ Create Share Animals funcionality
 Create routing {cm:2022-06-27}
 Create Logout {cm:2022-06-29}
 Create Vaccine Page {cm:2022-07-01}
+Responsivity

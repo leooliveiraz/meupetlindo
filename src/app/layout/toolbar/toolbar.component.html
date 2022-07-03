@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button aria-label="Menu Button" >
+  <button mat-icon-button aria-label="Menu Button"  *ngIf="showMenuButton" (click)="openOrCloseMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <span routerLink="/">Meu Pet Lindo</span>

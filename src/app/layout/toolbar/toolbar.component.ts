@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
+  @Input() showMenuButton: any;
+  @Output() menuStatusChange = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openOrCloseMenu(){
+    this.menuStatusChange.emit();
   }
 
 }

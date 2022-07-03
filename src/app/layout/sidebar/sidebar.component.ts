@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { GoogleAuthService } from 'src/app/services/auth/google-auth.service';
 
@@ -10,6 +10,10 @@ import { GoogleAuthService } from 'src/app/services/auth/google-auth.service';
 export class SidebarComponent implements OnInit {
 
   exitIcon = faArrowRightFromBracket;
+  innerWidth: any = window.innerWidth;
+  isMobile = innerWidth < 600;
+  sideNavOpened = false;
+
   constructor(private authService: GoogleAuthService) { }
 
   isAutenthicated = false;
@@ -23,5 +27,18 @@ export class SidebarComponent implements OnInit {
     this.authService.logout();
     this.isAutenthicated = this.authService.isAuthenticated();
   }
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth;
+    this.isMobile = innerWidth < 600;
+  }
 
+  changeSideMenuStatus(){
+    this.sideNavOpened = !this.sideNavOpened;
+  }
+
+  closeMenu(){
+    this.sideNavOpened = false;
+  }
 }

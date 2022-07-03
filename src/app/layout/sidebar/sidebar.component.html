@@ -1,23 +1,23 @@
-<mat-sidenav-container hasBackdrop="false">
-  <mat-sidenav opened mode="side" class="sidebar">
+<mat-sidenav-container [hasBackdrop]="isMobile">
+  <mat-sidenav [opened]="!isMobile || sideNavOpened" [mode]="isMobile ? 'over' : 'side'" class="sidebar">
     <mat-nav-list>
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="/my-animals">Meus bichinhos</a>
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="/new-animal">Adicionar um animalzinho</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="/my-animals" (click)="closeMenu()">Meus bichinhos</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="/new-animal" (click)="closeMenu()">Adicionar um animalzinho</a>
       <mat-divider *ngIf="isAutenthicated" ></mat-divider>
       <!-- <a mat-list-item *ngIf="isAutenthicated" routerLink="antiflea">Antipulgas</a> -->
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="exams">Exames</a>
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="drugs">Medicamento</a>
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="weight">Peso</a>
-      <a mat-list-item *ngIf="isAutenthicated" routerLink="vaccine">Vacina</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="exams" (click)="closeMenu()">Exames</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="drugs" (click)="closeMenu()">Medicamento</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="weight" (click)="closeMenu()">Peso</a>
+      <a mat-list-item *ngIf="isAutenthicated" routerLink="vaccine" (click)="closeMenu()">Vacina</a>
       <!-- <a mat-list-item *ngIf="isAutenthicated" routerLink="vermifuge">Vermifugo</a> -->
-      <mat-divider *ngIf="isAutenthicated" ></mat-divider>
-      <a mat-list-item routerLink="/about">Sobre</a>
+      <mat-divider *ngIf="isAutenthicated" (click)="closeMenu()" ></mat-divider>
+      <a mat-list-item routerLink="/about" (click)="closeMenu()">Sobre</a>
       <mat-divider></mat-divider>
-      <a mat-list-item *ngIf="isAutenthicated" (click)="logout()"> Sair </a>
+      <a mat-list-item *ngIf="isAutenthicated" (click)="logout()" (click)="closeMenu()"> Sair </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-toolbar></app-toolbar>
+    <app-toolbar [showMenuButton]="isMobile" (menuStatusChange)="changeSideMenuStatus()" ></app-toolbar>
     <app-content class="content"></app-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

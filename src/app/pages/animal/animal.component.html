@@ -65,7 +65,7 @@
   <mat-card-content>
     <mat-divider></mat-divider><br />
     <ng-container *ngFor="let item of listaExame">
-      <mat-card>
+      <mat-card class="mat-elevation-z5">
         <strong>{{ item.nome }}</strong>
         <br />
         Data da Aplicação:
@@ -84,7 +84,7 @@
     <mat-divider></mat-divider>
     <br />
     <ng-container *ngFor="let item of listaMedicacao">
-      <mat-card>
+      <mat-card class="mat-elevation-z5">
         <span>{{ item.nome }}</span>
         <br />
         Data da Aplicação:
@@ -108,7 +108,7 @@
   <mat-card-content>
     <mat-divider></mat-divider><br />
     <ng-container *ngFor="let item of listaVacina">
-      <mat-card>
+      <mat-card class="mat-elevation-z5">
         {{item.nome}}<br />
         Data da Aplicação:
         <strong>{{ item.dataVacina | date: "dd/MM/yyyy" }}</strong>
