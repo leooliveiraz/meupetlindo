@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 const oAuthConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
   strictDiscoveryDocumentValidation: false,
-  redirectUri: window.location.origin,
+  redirectUri: environment.OAUTH2_REDIRECT,
   clientId: environment.GOOGLE_OAUTH2,
   scope: 'openid profile',
 };
@@ -25,7 +25,7 @@ export class GoogleAuthService {
 
   configure() {
     this.authService.loadDiscoveryDocument().then(() => {
-      console.log('loadDiscoveryDocument');
+      console.log(window.location.origin);
       this.authService.tryLoginImplicitFlow().then(() => {
         if (this.authService.hasValidAccessToken()) {
           this.authService.loadUserProfile().then((userProfile) => {
