@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { faPenToSquare, faShareNodes, faTrash, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { ShareAnimalComponent } from 'src/app/components/share-animal/share-animal.component';
 import { AnimalService } from 'src/app/services/animal.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { environment } from 'src/environments/environment';
@@ -20,7 +22,8 @@ export class MyAnimalsComponent implements OnInit {
   openIcon = faUpRightFromSquare;
 
   constructor(private service: AnimalService,
-    private toastService: ToastService) { }
+    private toastService: ToastService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.carregar();
@@ -67,7 +70,10 @@ export class MyAnimalsComponent implements OnInit {
   }
 
   abrirCompartilhamento(item: any) {
-    // this.modalService.open(CompartilharAnimalComponent,{animal: item})
+    const newDialog = this.dialog.open(ShareAnimalComponent, { data: {animal: item} });
+    newDialog.afterClosed().subscribe(res => {
+
+    })
   }
 
 }

@@ -51,6 +51,7 @@ export class GoogleAuthService {
 
   storeAuthentication(googleUser: any) {
     console.log(googleUser);
+    googleUser.idToken = this.getIdToken();
     localStorage.setItem('profile', JSON.stringify(googleUser));
   }
 
@@ -61,6 +62,9 @@ export class GoogleAuthService {
 
   getIdToken() {
     return this.authService.getIdToken();
+  }
+  getStoredIdToken() {
+    return this.getUser().idToken;
   }
   
   isAuthenticated() {

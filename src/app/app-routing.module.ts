@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
+import { AddSharedAnimalComponent } from './pages/add-shared-animal/add-shared-animal.component';
 import { AnimalComponent } from './pages/animal/animal.component';
 import { DrugsComponent } from './pages/drugs/drugs.component';
 import { ExamsComponent } from './pages/exams/exams.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'vermifuge', component: DrugsComponent , canActivate: [AuthGuardService]},
   { path: 'vaccine', component: VaccineComponent , canActivate: [AuthGuardService]},
   { path: 'exams', component: ExamsComponent , canActivate: [AuthGuardService]},
+  { path: 'share/:codigo', component: AddSharedAnimalComponent },
   { path: '', component: MainComponent },
 ];
 

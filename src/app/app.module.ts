@@ -47,6 +47,8 @@ import { WeightComponent } from './pages/weight/weight.component';
 import { VaccineComponent } from './pages/vaccine/vaccine.component';
 import { DrugsComponent } from './pages/drugs/drugs.component';
 import { ExamsComponent } from './pages/exams/exams.component';
+import { ShareAnimalComponent } from './components/share-animal/share-animal.component';
+import { AddSharedAnimalComponent } from './pages/add-shared-animal/add-shared-animal.component';
 
 
 @NgModule({
@@ -68,6 +70,8 @@ import { ExamsComponent } from './pages/exams/exams.component';
     VaccineComponent,
     DrugsComponent,
     ExamsComponent,
+    ShareAnimalComponent,
+    AddSharedAnimalComponent,
   ],
   imports: [
     BrowserModule,

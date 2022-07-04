@@ -7,8 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AnimalImageComponent implements OnInit {
 
-  @Input() src :any;
-  constructor() { }
+  @Input() src: any;
+  @Input() width: any;
+  @Input() height: any;
+
+  constructor() {
+    if (!this.width)
+      this.width = 256;
+    if (!this.height)
+      this.height = 256;
+  }
 
   ngOnInit(): void {
   }

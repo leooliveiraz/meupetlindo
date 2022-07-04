@@ -1,0 +1,43 @@
+<mat-card class="card-pages">
+  <mat-card-content>
+    <p>
+      <strong>{{ dados.nomeDono }}</strong> quer compartilhar informações de um
+      animalzinho com você!<br />
+    </p>
+    <div style="width: 100%; text-align: center">
+      <app-animal-image [src]="srcImg"></app-animal-image>
+    </div>
+    <h2>{{ dados.nomeAnimal }}</h2>
+    <mat-divider></mat-divider>
+    <br />
+    <p *ngIf="estaLogado">
+      Clique no botão <strong>Adicionar</strong> para adicionar o animalzinho a
+      sua lista, ou em <strong>Sair</strong> para cancelar.
+    </p>
+
+    <p *ngIf="!estaLogado">
+      Para ver as informações do animalzinho, você precisa estar logado.<br />
+      Entre com sua conta, clicando no botão abaixo!
+    </p>
+
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+
+    <app-login-google
+      *ngIf="!estaLogado"
+      (autenticou)="autenticou()"
+    ></app-login-google>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="estaLogado"
+      (click)="confirmar()"
+    >
+      Adicionar
+    </button>
+    <button mat-raised-button *ngIf="estaLogado" [routerLink]="['/']">
+      Sair
+    </button>
+  </mat-card-content>
+</mat-card>

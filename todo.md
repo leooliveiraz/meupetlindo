@@ -10,8 +10,12 @@ Create Weight Record Page {cm:2022-07-01}
 Create Drugs Page {cm:2022-07-01}
 Login functionality {cm:2022-06-29}
 Create main page {cm:2022-06-27}
-Create Share Animals funcionality
 Create routing {cm:2022-06-27}
 Create Logout {cm:2022-06-29}
 Create Vaccine Page {cm:2022-07-01}
 Responsivity {cm:2022-07-03}
+Create Share Animals funcionality {cm:2022-07-03}
+Antiflea and Vermifuge Migration
+PWA
+Notification System
+Show Shared Animals in My Animals List

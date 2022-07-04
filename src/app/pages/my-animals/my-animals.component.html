@@ -41,12 +41,37 @@
             <button mat-icon-button color="primary" [routerLink]="['/edit/' + item.id]" >
               <fa-icon [icon]="editIcon" size="lg" ></fa-icon>
             </button>
-            <!-- <button mat-icon-button color="accent" (click)="abrirCompartilhamento(item)">
+            <button mat-icon-button color="accent" (click)="abrirCompartilhamento(item)">
               <fa-icon [icon]="shareIcon" size="lg"></fa-icon>
-            </button> -->
+            </button>
             <button mat-icon-button color="error" (click)="excluir(item.id)" >
               <fa-icon [icon]="trashIcon" size="lg" ></fa-icon>
             </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+      
+      <div *ngFor="let item of listaCompartilhados">
+        <div class="item">
+          <div class="animal-info" [routerLink]="['/animal/' + item.id]">
+            <img
+              width="48"
+              class="img"
+              [src]="
+                item.srcImg
+                  ? item.srcImg
+                  : item.idArquivo
+                  ? urlImagem + item.idArquivo
+                  : 'assets/icons/animals-allowed.png'
+              "
+              style="align-self: flex-start"
+            />
+            <div class="item-name" [routerLink]="['/animal/' + item.id]">
+              {{ item.nome }}
+            </div>
+          </div>
+          <div class="actions">
           </div>
         </div>
         <mat-divider></mat-divider>

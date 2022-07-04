@@ -20,7 +20,7 @@ export class TokenInterceptor implements HttpInterceptor {
       if (this.authService.isAuthenticated())
         request = request.clone({
           setHeaders: {
-            Authorization: `Bearer ${this.authService.getIdToken()}`
+            Authorization: `Bearer ${this.authService.getStoredIdToken()}`
           }
         });
     }
