@@ -15,7 +15,9 @@ Create Logout {cm:2022-06-29}
 Create Vaccine Page {cm:2022-07-01}
 Responsivity {cm:2022-07-03}
 Create Share Animals funcionality {cm:2022-07-03}
-Antiflea and Vermifuge Migration
-PWA
-Notification System
 Show Shared Animals in My Animals List {cm:2022-07-03}
+Antiflea and Vermifuge Migration {cm:2022-07-13}
+PWA {cm:2022-07-13}
+Notification System
+Validate inputs
+Change home text

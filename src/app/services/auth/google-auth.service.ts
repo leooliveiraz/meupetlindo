@@ -25,7 +25,6 @@ export class GoogleAuthService {
 
   configure() {
     this.authService.loadDiscoveryDocument().then(() => {
-      console.log(window.location.origin);
       this.authService.tryLoginImplicitFlow().then(() => {
         if (this.authService.hasValidAccessToken()) {
           this.authService.loadUserProfile().then((userProfile) => {
@@ -50,7 +49,6 @@ export class GoogleAuthService {
   }
 
   storeAuthentication(googleUser: any) {
-    console.log(googleUser);
     googleUser.idToken = this.getIdToken();
     localStorage.setItem('profile', JSON.stringify(googleUser));
   }

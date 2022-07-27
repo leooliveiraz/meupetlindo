@@ -1,4 +1,8 @@
 .content{
   min-height: 80vh;
+  min-height: 80vh;
+  height: -moz-calc(100vh - 64px - 2em);
+  height: -webkit-calc(100vh - 64px - 2em);
+  height: calc(100vh - 64px - 2em);
   padding: 1em;
 }

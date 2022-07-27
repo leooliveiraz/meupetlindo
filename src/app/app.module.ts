@@ -49,6 +49,10 @@ import { DrugsComponent } from './pages/drugs/drugs.component';
 import { ExamsComponent } from './pages/exams/exams.component';
 import { ShareAnimalComponent } from './components/share-animal/share-animal.component';
 import { AddSharedAnimalComponent } from './pages/add-shared-animal/add-shared-animal.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { NotificationComponent } from './components/notification/notification.component';
+import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
 
 
 @NgModule({
@@ -72,6 +76,8 @@ import { AddSharedAnimalComponent } from './pages/add-shared-animal/add-shared-a
     ExamsComponent,
     ShareAnimalComponent,
     AddSharedAnimalComponent,
+    NotificationComponent,
+    NotificationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +104,13 @@ import { AddSharedAnimalComponent } from './pages/add-shared-animal/add-shared-a
     MatSnackBarModule,
     ImageCropperModule,
     NgChartsModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
