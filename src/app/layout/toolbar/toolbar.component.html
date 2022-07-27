@@ -2,5 +2,5 @@
   <button mat-icon-button aria-label="Menu Button"  *ngIf="showMenuButton" (click)="openOrCloseMenu()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span routerLink="/">Meu Pet Lindo</span>
+  <span [routerLink]="linkMainPage">Meu Pet Lindo</span>
 </mat-toolbar>

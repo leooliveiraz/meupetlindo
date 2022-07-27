@@ -25,7 +25,6 @@ export class NotificationDialogComponent implements OnInit {
       serverPublicKey: environment.VAPID_PUBLIC_KEY
     })
       .then(sub => {
-        console.log(sub);
         this.salvarInscricao(sub)
         this.webPushService.subscribeInServer(sub).subscribe(() => {
           this.toast.create("success", "A partir de agora, você receberá notificações do nosso APP!");

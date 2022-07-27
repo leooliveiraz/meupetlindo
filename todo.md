@@ -18,6 +18,6 @@ Create Share Animals funcionality {cm:2022-07-03}
 Show Shared Animals in My Animals List {cm:2022-07-03}
 Antiflea and Vermifuge Migration {cm:2022-07-13}
 PWA {cm:2022-07-13}
-Notification System
+Notification System {cm:2022-07-27}
 Validate inputs
-Change home text
+Change home text {start:2022-07-27T18:04:13} {cm:2022-07-27} {duration:24m}
