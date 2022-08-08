@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'exams', component: ExamsComponent , canActivate: [AuthGuardService]},
   { path: 'share/:codigo', component: AddSharedAnimalComponent },
   { path: '', component: MainComponent },
+  { path: '**', pathMatch: 'full', component: MainComponent },
 ];
 
 @NgModule({

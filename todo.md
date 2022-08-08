@@ -21,3 +21,4 @@ PWA {cm:2022-07-13}
 Notification System {cm:2022-07-27}
 Validate inputs
 Change home text {start:2022-07-27T18:04:13} {cm:2022-07-27} {duration:24m}
+Configure default page to not found {start:2022-08-08T10:08:17} {cm:2022-08-08} {duration:1h}
