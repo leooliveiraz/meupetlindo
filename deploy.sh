@@ -1,4 +1,4 @@
-ng build  --deploy-url "https://leooliveiraz.github.io/meupetlindo/" --base-href /meupetlindo/
+ng build  --base-href /meupetlindo/
 cd dist/meupetlindoapp/
 cp index.html 404.html
 cd ..
