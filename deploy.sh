@@ -1,4 +1,4 @@
-ng build --base-href https://leooliveiraz.github.io/meupetlindo/
+# ng build --base-href https://leooliveiraz.github.io/meupetlindo/
 cd dist/meupetlindoapp/
 cp index.html 404.html
 cd ..
@@ -7,6 +7,7 @@ git checkout gh-pages
 rm -rf docs/*
 cp -r dist/meupetlindoapp/* docs/
 cp CNAME docs/
+ls docs/
 git add .
 git commit -m "Deploy"
 git push
