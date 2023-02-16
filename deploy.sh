@@ -1,4 +1,4 @@
-ng build
+ng build --base-href http://www.meupetlindo.com/
 cd dist/meupetlindoapp/
 cp index.html 404.html
 cd ..
