@@ -1,4 +1,4 @@
-ng build --prod
+ng build
 cd dist/meupetlindoapp/
 cp index.html 404.html
 cd ..
