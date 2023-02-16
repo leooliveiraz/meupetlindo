@@ -53,7 +53,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NotificationComponent } from './components/notification/notification.component';
 import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
-import { APP_BASE_HREF } from '@angular/common';
 
 
 @NgModule({
@@ -130,7 +129,6 @@ import { APP_BASE_HREF } from '@angular/common';
         },
       }
     }, 
-    { provide: APP_BASE_HREF, useValue: environment.APP_BASE_HREF },
   ],
   bootstrap: [AppComponent]
 })
