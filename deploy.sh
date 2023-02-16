@@ -1,4 +1,4 @@
-ng build  --base-href /meupetlindo/
+ng build --prod --bh /meupetlindo/
 cd dist/meupetlindoapp/
 cp index.html 404.html
 cd ..
