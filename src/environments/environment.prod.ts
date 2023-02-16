@@ -4,5 +4,6 @@ export const environment = {
   OAUTH2_REDIRECT: 'https://leooliveiraz.github.io/meupetlindo',
   API_URL: 'https://mpl.tunnelto.dev/api/',
   APP_URL: 'https://leooliveiraz.github.io/meupetlindo/',
-  VAPID_PUBLIC_KEY: "BJIEHJOP5D2qNYFVA23FXzd6yLGvG3mRh7lr5mq8HjNvlucsIDo_AeIP-xc-IfBLiFHZkuEWMehY6XapWJsaG8k"
+  VAPID_PUBLIC_KEY: "BJIEHJOP5D2qNYFVA23FXzd6yLGvG3mRh7lr5mq8HjNvlucsIDo_AeIP-xc-IfBLiFHZkuEWMehY6XapWJsaG8k",
+  APP_BASE_HREF: '/meupetlindo/'
 };
