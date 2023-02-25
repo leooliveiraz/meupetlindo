@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meupetlindoapp';
+  constructor(private router: Router) {
+    if (environment.production) {
+      console.log(this.router.url)
+      if (this.router.url.indexOf('https://') > -1) {
+        window.location.assign('https://www.meupetlindo.com/');
+      }
+    }
+  }
 }
