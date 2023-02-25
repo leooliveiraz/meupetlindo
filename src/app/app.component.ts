@@ -13,8 +13,9 @@ export class AppComponent {
     console.log(environment);
     if (environment.production) {
       console.log(this.router.url)
+      console.log(this.router.url.indexOf('https://') )
       if (this.router.url.indexOf('https://') === -1) {
-        window.location.assign('https://www.meupetlindo.com/');
+        //window.location.assign('https://www.meupetlindo.com/');
       }
     }
   }
