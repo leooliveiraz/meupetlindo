@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class AppComponent {
   title = 'meupetlindoapp';
   constructor(private router: Router) {
+    console.log(environment.APP_VERSION);
     if (environment.production) {
       console.log(this.router.url)
       if (this.router.url.indexOf('https://') > -1) {

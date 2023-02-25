@@ -5,5 +5,6 @@ export const environment = {
   APP_URL: 'http://localhost:4200/',
   API_URL: 'http://localhost:8081/',
   VAPID_PUBLIC_KEY: "BJIEHJOP5D2qNYFVA23FXzd6yLGvG3mRh7lr5mq8HjNvlucsIDo_AeIP-xc-IfBLiFHZkuEWMehY6XapWJsaG8k",
-  APP_BASE_HREF: '/'
+  APP_BASE_HREF: '/',
+  APP_VERSION: "1.0.0"
 };
