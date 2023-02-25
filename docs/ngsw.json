@@ -1,0 +1,85 @@
+{
+  "configVersion": 1,
+  "timestamp": 1677358529967,
+  "index": "https://leooliveiraz.github.io/meupetlindo/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://leooliveiraz.github.io/meupetlindo/favicon.ico",
+        "https://leooliveiraz.github.io/meupetlindo/index.html",
+        "https://leooliveiraz.github.io/meupetlindo/main.1cdefb9be49098bd.js",
+        "https://leooliveiraz.github.io/meupetlindo/manifest.webmanifest",
+        "https://leooliveiraz.github.io/meupetlindo/polyfills.ccb549d8c69d5b99.js",
+        "https://leooliveiraz.github.io/meupetlindo/runtime.76f001f18d0643c2.js",
+        "https://leooliveiraz.github.io/meupetlindo/styles.d0eafd5686a8dee0.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/animals-allowed.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/communication.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-128x128.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-144x144.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-152x152.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-192x192.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-384x384.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-512x512.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-72x72.png",
+        "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/animals-allowed.png": "7dbc05900f449b418fdb9db1b579a32643e700e1",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/communication.png": "507aba7de7c83cd00fd3a973d9fd94a70b07d0aa",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-128x128.png": "450832ca44a0d364edee420a9661857d3cdd5498",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-144x144.png": "2a81d2dd6a5b7a827fc5623c7c27edc09157e746",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-152x152.png": "450832ca44a0d364edee420a9661857d3cdd5498",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-192x192.png": "eeac5e5ab779a02f8cd55c465c7f2c852cbcaf00",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-384x384.png": "104c55380931b6b5ae60cf50b04c373069d1b77b",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-512x512.png": "a4adc5136e554efe199355231c1eb81312916469",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-72x72.png": "4dc3735c9799ac2752292dae54896a6016bff6a4",
+    "https://leooliveiraz.github.io/meupetlindo/assets/icons/icon-96x96.png": "ddcc622353a24bc5f1df1ba60ef08486a31119a1",
+    "https://leooliveiraz.github.io/meupetlindo/favicon.ico": "0e73a3caac48e66ae8553e73632eb1f7a4016783",
+    "https://leooliveiraz.github.io/meupetlindo/index.html": "a5b65655fba5500bb3c73fc5fa681c93f2006744",
+    "https://leooliveiraz.github.io/meupetlindo/main.1cdefb9be49098bd.js": "3475e600b15c09f3677bc2a4af5696ca8bdb8896",
+    "https://leooliveiraz.github.io/meupetlindo/manifest.webmanifest": "099aee71eec3a8f8fc459d89e29040d211261323",
+    "https://leooliveiraz.github.io/meupetlindo/polyfills.ccb549d8c69d5b99.js": "52509ba65b324cd37726b96ddfb9dd61e1d2fa05",
+    "https://leooliveiraz.github.io/meupetlindo/runtime.76f001f18d0643c2.js": "5c1e5ee6bcc5a938022968af8349679222496d00",
+    "https://leooliveiraz.github.io/meupetlindo/styles.d0eafd5686a8dee0.css": "4cf1c320cf0874b950da5be87287ba01838ec5cd"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
