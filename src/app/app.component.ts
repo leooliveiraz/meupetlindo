@@ -8,13 +8,12 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'meupetlindoapp';
+  title = 'Meu Pet Lindo';
   constructor(private router: Router) {
-    console.log(environment);
+    console.log(environment.APP_VERSION);
+    const url = window.location.href;
     if (environment.production) {
-      console.log(this.router.url)
-      console.log(this.router.url.indexOf('https://') )
-      if (this.router.url.indexOf('https://') === -1) {
+      if (url.indexOf('https://') === -1) {
         window.location.href = 'https://www.meupetlindo.com/';
       }
     }
