@@ -24,6 +24,7 @@ export class ExamsComponent implements OnInit {
   nome: any = null;
   dataExame = '';
   dataProxima = '';
+  observacao = null;
   urlImagem = `${environment.API_URL}arquivo/`;
 
   listaAnimais: any = [];

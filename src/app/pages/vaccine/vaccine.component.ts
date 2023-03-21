@@ -26,6 +26,7 @@ export class VaccineComponent implements OnInit {
   nome = null;
   dataVacina = '';
   dataProximaVacina = '';
+  observacao = null;
 
   urlImagem = `${environment.API_URL}arquivo/`;
   listaAnimais: any = [];

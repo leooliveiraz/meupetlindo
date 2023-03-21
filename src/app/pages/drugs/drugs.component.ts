@@ -27,6 +27,7 @@ export class DrugsComponent implements OnInit {
   nome = null;
   dataMedicamento = '';
   dataProxima = '';
+  observacao = null;
   urlImagem = `${environment.API_URL}arquivo/`;
 
   listaAnimais: any = [];

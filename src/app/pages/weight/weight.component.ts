@@ -17,6 +17,7 @@ export class WeightComponent implements OnInit {
   idAnimal: any = null;
   peso: any = null;
   dataPesagem = '';
+  observacao = null;
   urlImagem = `${environment.API_URL}arquivo/`;
 
   listaAnimais: any = [];

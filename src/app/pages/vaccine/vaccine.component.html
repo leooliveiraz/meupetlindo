@@ -75,6 +75,17 @@
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker> </mat-form-field
       ><br />
+      
+      <mat-form-field class="inputs">
+        <mat-label>Observações:</mat-label>
+        <textarea
+          matInput
+          placeholder="Digite qualquer informação relevante referente ao registro deste medicamento"
+          [maxLength]="150"
+          [(ngModel)]="observacao"
+          name="observacao"
+        ></textarea> </mat-form-field
+      ><br />
 
 
       <div class="right-align">

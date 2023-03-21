@@ -16,8 +16,7 @@
             [icon]="cakeIcon"
             color="primary"
             size="lg"
-            st
-          ></fa-icon>
+            st></fa-icon>
         </div>
         <div>
           <label>{{ animal?.dataNascimento | date: "dd/MM/yyyy" }}</label>
@@ -29,8 +28,7 @@
             style="color: #f44336"
             [icon]="heartIcon"
             color="error"
-            size="lg"
-          ></fa-icon>
+            size="lg"></fa-icon>
         </div>
         <div>
           {{ animal?.dataAdocao | date: "dd/MM/yyyy" }}
@@ -42,8 +40,7 @@
             style="color: #ffd740"
             [icon]="starIcon"
             color="accent"
-            size="lg"
-          ></fa-icon>
+            size="lg"></fa-icon>
         </div>
         <div>
           {{ animal?.dataObito | date: "dd/MM/yyyy" }}
@@ -70,6 +67,15 @@
         <br />
         Data da Aplicação:
         <strong>{{ item.dataExame | date: "dd/MM/yyyy" }}</strong>
+        <br />
+        <div *ngIf="item.observacao" style="white-space: pre-line;">
+          <br />
+          <mat-divider></mat-divider>
+          <br />
+          Observações:
+          <br />
+          {{ item.observacao }}
+        </div>
       </mat-card>
       <br />
     </ng-container>
@@ -92,6 +98,14 @@
         Próxima Aplicação:
         <strong>{{ item.dataProxima | date: "dd/MM/yyyy" }}</strong>
         <br />
+        <div *ngIf="item.observacao" style="white-space: pre-line;">
+          <br />
+          <mat-divider></mat-divider>
+          <br />
+          Observações:
+          <br />
+          {{ item.observacao }}
+        </div>
       </mat-card>
       <br />
     </ng-container>
@@ -101,9 +115,7 @@
 
 <mat-card class="card-pages">
   <mat-card-title>Registro de Vacinas</mat-card-title>
-  <mat-card-subtitle
-    >Acompanhe o histórico de vacinas do seu bichinho.</mat-card-subtitle
-  >
+  <mat-card-subtitle>Acompanhe o histórico de vacinas do seu bichinho.</mat-card-subtitle>
   <mat-card-content>
     <mat-divider></mat-divider><br />
     <ng-container *ngFor="let item of listaVacina">
@@ -114,6 +126,15 @@
         <br />
         Próxima Aplicação:
         <strong>{{ item.dataProximaVacina | date: "dd/MM/yyyy" }}</strong>
+        <br />
+        <div *ngIf="item.observacao" style="white-space: pre-line;">
+          <br />
+          <mat-divider></mat-divider>
+          <br />
+          Observações:
+          <br />
+          {{ item.observacao }}
+        </div>
       </mat-card>
     </ng-container>
   </mat-card-content>
@@ -122,31 +143,26 @@
 
 <mat-card class="card-pages">
   <mat-card-title>Registro de peso</mat-card-title>
-  <mat-card-subtitle
-    >Acompanhe todas as pesagens do seu bichinho.</mat-card-subtitle
-  >
+  <mat-card-subtitle>Acompanhe todas as pesagens do seu bichinho.</mat-card-subtitle>
   <mat-card-content>
     <mat-divider></mat-divider><br />
     <section id="secao-peso">
       <div
         class="white-text text-darken-1 center-align"
-        *ngIf="!carregando && listaPeso.length === 0"
-      >
+        *ngIf="!carregando && listaPeso.length === 0">
         <p>
-          <span
-            >Parece que você ainda não adicionou um registro de pesagem para
-            esse bichinho.</span
-          >
+          <span>Parece que você ainda não adicionou um registro de pesagem
+            para
+            esse bichinho.</span>
           <span *ngIf="animal.dono">
-            Clique no botão abaixo para adicionar.</span
-          >
+            Clique no botão abaixo para adicionar.</span>
         </p>
       </div>
 
       <div
         style="display: block"
-        *ngIf="listaPeso != null && listaPeso.length > 0"
-      >
+        *ngIf="listaPeso != null && listaPeso.length> 0"
+        >
         <canvas
           class="grafico"
           baseChart
@@ -154,8 +170,7 @@
           [datasets]="lineChartData"
           [labels]="lineChartLabels"
           [options]="lineChartOptions"
-          [type]="'line'"
-        ></canvas>
+          [type]="'line'"></canvas>
       </div>
       <mat-divider></mat-divider>
       <br />
@@ -165,27 +180,31 @@
         color="primary"
         [routerLink]="'/weight'"
         *ngIf="animal.dono"
-        [queryParams]="{ animal: idAnimal }"
-      >
+        [queryParams]="{ animal: idAnimal }">
         Registrar peso
       </button>
       <br />
       <br />
       <mat-divider></mat-divider>
       <br />
-      <div *ngIf="listaPeso != null && listaPeso.length > 0">
+      <div *ngIf="listaPeso != null && listaPeso.length> 0">
         <ng-container *ngFor="let item of listaPeso">
           <div class="list-item">
             <div style="align-self: center">
               Data: {{ item.dataPesagem | date: "dd/MM/yyyy" }}, Peso:
-              {{ item.peso }}
+              {{ item.peso }} <br />
+              <div *ngIf="item.observacao" style="white-space: pre-line;">
+                Observações:
+                <br />
+                {{ item.observacao }}
+              </div>
+              
             </div>
             <button mat-icon-button color="error" style="align-self: center">
               <fa-icon
                 [icon]="deleteIcon"
                 (click)="excluirPeso(item.id)"
-                *ngIf="animal.dono"
-              ></fa-icon>
+                *ngIf="animal.dono || true"></fa-icon>
             </button>
           </div>
           <mat-divider></mat-divider>
