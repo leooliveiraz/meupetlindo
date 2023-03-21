@@ -1,15 +1,6 @@
-ng build --configuration production --base-href https://www.meupetlindo.com/
+ng build --configuration production
 cd dist/meupetlindoapp/
+rm mpl.tar.gz
+tar -cvzf mpl.tar.gz *
 cp index.html 404.html
-cd ..
-cd ..
-git checkout gh-pages
-mkdir -o docs
-rm -rf docs/*
-cp -r dist/meupetlindoapp/* docs/
-echo www.meupetlindo.com > docs/CNAME
-ls docs/
-git add .
-git commit -m "Deploy"
-git push
-git checkout main
+scp mpl.tar.gz root@191.101.18.116:/mpl/app/

@@ -11,11 +11,8 @@
       Por favor aguarde, estamos carregando as informações dos seus bichinhos.
     </div>
     <div
-      *ngIf="
-        (lista != null && lista.length > 0) ||
-        (listaCompartilhados != null && listaCompartilhados.length > 0)
-      "
-    >
+      *ngIf="(lista != null && lista.length> 0) ||
+      (listaCompartilhados != null && listaCompartilhados.length > 0)">
       <div *ngFor="let item of lista">
         <div class="item">
           <div class="animal-info" [routerLink]="['/animal/' + item.id]">
@@ -23,33 +20,35 @@
               width="48"
               class="img"
               [src]="
-                item.srcImg
-                  ? item.srcImg
-                  : item.idArquivo
-                  ? urlImagem + item.idArquivo
-                  : 'assets/icons/animals-allowed.png'
+              item.srcImg
+              ? item.srcImg
+              : item.idArquivo
+              ? urlImagem + item.idArquivo
+              : 'assets/icons/animals-allowed.png'
               "
               style="align-self: flex-start"
-            />
+              />
             <div class="item-name" [routerLink]="['/animal/' + item.id]">
               {{ item.nome }}
             </div>
           </div>
           <div class="actions">
-            <button mat-icon-button color="primary" [routerLink]="['/edit/' + item.id]" >
-              <fa-icon [icon]="editIcon" size="lg" ></fa-icon>
+            <button mat-icon-button color="primary" [routerLink]="['/edit/' +
+              item.id]">
+              <fa-icon [icon]="editIcon" size="lg"></fa-icon>
             </button>
-            <button mat-icon-button color="accent" (click)="abrirCompartilhamento(item)">
+            <button mat-icon-button color="accent"
+              (click)="abrirCompartilhamento(item)">
               <fa-icon [icon]="shareIcon" size="lg"></fa-icon>
             </button>
-            <button mat-icon-button color="error" (click)="excluir(item.id)" >
-              <fa-icon [icon]="trashIcon" size="lg" ></fa-icon>
+            <button mat-icon-button color="error" (click)="excluir(item.id)">
+              <fa-icon [icon]="trashIcon" size="lg"></fa-icon>
             </button>
           </div>
         </div>
         <mat-divider></mat-divider>
       </div>
-      
+
       <div *ngFor="let item of listaCompartilhados">
         <div class="item">
           <div class="animal-info" [routerLink]="['/animal/' + item.id]">
@@ -57,19 +56,23 @@
               width="48"
               class="img"
               [src]="
-                item.srcImg
-                  ? item.srcImg
-                  : item.idArquivo
-                  ? urlImagem + item.idArquivo
-                  : 'assets/icons/animals-allowed.png'
+              item.srcImg
+              ? item.srcImg
+              : item.idArquivo
+              ? urlImagem + item.idArquivo
+              : 'assets/icons/animals-allowed.png'
               "
               style="align-self: flex-start"
-            />
+              />
             <div class="item-name" [routerLink]="['/animal/' + item.id]">
               {{ item.nome }}
             </div>
           </div>
           <div class="actions">
+            <button *ngIf="item.permissao === 'EDITAR'" mat-icon-button color="primary" [routerLink]="['/edit/' +
+              item.id]">
+              <fa-icon [icon]="editIcon" size="lg"></fa-icon>
+            </button>
           </div>
         </div>
         <mat-divider></mat-divider>
@@ -110,8 +113,7 @@
 
     <div
       class="white-text text-darken-1 center-align"
-      *ngIf="!carregando && lista.length === 0"
-    >
+      *ngIf="!carregando && lista.length === 0">
       <p>
         Você ainda não possui nenhum animalzinho cadastrado, clique no botão
         abaixo para cadastrar.

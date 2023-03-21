@@ -1,9 +1,10 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { faCopy, faShareNodes, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCopy, faShareNodes, faXmark, faRotate } from '@fortawesome/free-solid-svg-icons';
 import { CompartilharAnimalService } from 'src/app/services/compartilhar-animal.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-share-animal',
@@ -13,14 +14,18 @@ import { environment } from 'src/environments/environment';
 export class ShareAnimalComponent implements OnInit {
 
   animal: any;
-  closeIcon = faXmark;
-
+  
   urlImagem = `${environment.API_URL}arquivo/`;
   urlCompartilhamento = `${environment.APP_URL}share/`;
   codigoCompartilhamento = '';
   navegador: any = navigator;
-
+  iniciouGeracao = false;
+  permissao = 'VISUALIZAR';
+  
+  
+  closeIcon = faXmark;
   copyIcon = faCopy;
+  rotateIcon = faRotate;
   shareIcon = faShareNodes;
 
 
@@ -32,7 +37,15 @@ export class ShareAnimalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.gerar(this.animal.id).subscribe(res => {
+  }
+  
+  gerar(form:any){
+    if (form.form.status === 'INVALID') {
+      Swal.fire('', 'Por favor, escolha uma opção.', 'warning');
+      return;
+    }
+    this.iniciouGeracao = true;
+    this.service.gerar(this.animal.id, form.form.value.permissao).subscribe(res => {
       const gerado: any = res;
       this.codigoCompartilhamento = gerado.codigo;
       this.urlCompartilhamento = `${this.urlCompartilhamento}`;

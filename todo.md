@@ -23,3 +23,7 @@ Validate inputs
 Change home text {start:2022-07-27T18:04:13} {cm:2022-07-27} {duration:24m}
 Configure default page to not found {start:2022-08-08T10:08:17} {cm:2022-08-08} {duration:1h}
 Autoredirect to https when prod {start:2023-02-25T17:29:11} {cm:2023-02-25} {duration:30m}
+Add observations on records
+Share permissions {start:2023-03-21T13:03:34} {cm:2023-03-21}{duration:02h37m}
+Notifications bug
+Error on Delete animal {start:2023-03-21T07:13:02} {cm:2023-03-21} {duration:04h}

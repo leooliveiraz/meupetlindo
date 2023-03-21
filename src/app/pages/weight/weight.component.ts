@@ -62,6 +62,10 @@ export class WeightComponent implements OnInit {
       this.listaAnimais = res;
     }, erro => {
     });
+    this.animalService.listarCompartilhados('EDITAR').subscribe(res => {
+      this.listaAnimais = this.listaAnimais.concat(res)
+    }, erro => {
+    });
   }
 
 }

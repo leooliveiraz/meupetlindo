@@ -67,8 +67,18 @@ export class MyAnimalsComponent implements OnInit {
       this.carregando = false;
     });
 
-    this.service.listarCompartilhados().subscribe(res => {
-      this.listaCompartilhados = res;
+    this.service.listarCompartilhados('VISUALIZAR').subscribe((compartilhados : any) => {
+      compartilhados.forEach((element: any) => {
+        element.permissao = 'VISUALIZAR';
+        this.listaCompartilhados.push(element)
+      });
+    })
+
+    this.service.listarCompartilhados('EDITAR').subscribe((compartilhados : any) => {
+      compartilhados.forEach((element: any) => {
+        element.permissao = 'EDITAR';
+        this.listaCompartilhados.push(element)
+      });
     })
   }
 

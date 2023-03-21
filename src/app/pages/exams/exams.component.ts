@@ -45,21 +45,24 @@ export class ExamsComponent implements OnInit {
     this.salvando = true;
     const exame: any = f.form.value;
     this.exameService.salvar(exame).subscribe(res => {
-      this.toastService.create('success','O Exame foi adicionado nas informações do seu bichinho!');
+      this.toastService.create('success', 'O Exame foi adicionado nas informações do seu bichinho!');
       this.router.navigateByUrl(`/animal/${exame.idAnimal}`);
     }, erro => {
       this.salvando = false;
-      this.toastService.create('error','Desculpe, não foi possível salvar esse exame!');
+      this.toastService.create('error', 'Desculpe, não foi possível salvar esse exame!');
     });
   }
 
   carregarAnimais() {
-      this.animalService.listar().subscribe(res => {
-        this.listaAnimais = res;
-      }, erro => {
-        
-      });
-    
+    this.animalService.listar().subscribe(res => {
+      this.listaAnimais = this.listaAnimais.concat(res)
+    }, erro => {
+    });
+
+    this.animalService.listarCompartilhados('EDITAR').subscribe(res => {
+      this.listaAnimais = this.listaAnimais.concat(res)
+    }, erro => {
+    });
   }
 
 }

@@ -61,5 +61,9 @@ export class DrugsComponent implements OnInit {
       this.listaAnimais = res;
     }, erro => {
     });
+    this.animalService.listarCompartilhados('EDITAR').subscribe(res => {
+      this.listaAnimais = this.listaAnimais.concat(res)
+    }, erro => {
+    });
   }
 }

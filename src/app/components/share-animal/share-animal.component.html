@@ -1,5 +1,6 @@
 <div style="width: 100%; text-align: right;">
-  <button mat-icon-button style="position: relative; top: -1em; right: -2em;" mat-dialog-close>
+  <button mat-icon-button style="position: relative; top: -1em; right: -2em;"
+    mat-dialog-close>
     <fa-icon [icon]="closeIcon"></fa-icon>
   </button>
 </div>
@@ -9,32 +10,50 @@
       [width]="158"
       [height]="158"
       [src]="
-        animal.srcImg
-          ? animal.srcImg
-          : animal.idArquivo
-          ? urlImagem + animal.idArquivo
-          : 'assets/icons/animals-allowed.png'
-      "
-    ></app-animal-image>
+      animal.srcImg
+      ? animal.srcImg
+      : animal.idArquivo
+      ? urlImagem + animal.idArquivo
+      : 'assets/icons/animals-allowed.png'
+      "></app-animal-image>
   </div>
   <h1>
     {{ animal.nome }}
   </h1>
   <mat-divider></mat-divider>
   <br />
-  <div *ngIf="codigoCompartilhamento">
+  <div *ngIf="!iniciouGeracao">
+    <p>
+      Antes de compartilhar as informações do seu animalzinho, <br />
+      escolha se a outra pessoa, poderá apenas <strong>vizualizar</strong>, <br
+        />
+      ou <strong>editar</strong> as informações também.
+    </p>
+    <form #f="ngForm" (ngSubmit)="gerar(f)">
+      <p>
+        <mat-radio-group aria-label="Selecione uma opção" [(ngModel)]="permissao" name="permissao" [color]="'primary'">
+          <mat-radio-button [value]="'VISUALIZAR'" style="margin-right: 1em;">Visualizar</mat-radio-button>
+          <mat-radio-button [value]="'EDITAR'">Editar</mat-radio-button>
+        </mat-radio-group>
+      </p>
+      <br /> 
+      <button type="submit" mat-raised-button color="primary">
+        <fa-icon [icon]="rotateIcon"></fa-icon>
+        Gerar link
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="iniciouGeracao && codigoCompartilhamento">
     <p>
       Link de compartilhamento gerado.<br />Compartilhe as informações do seu
       pet com outra pessoa.
     </p>
     <p>
-      <strong
-        ><span id="codigoCompartilhamento"
-          >{{ urlCompartilhamento }}<br class="mobile" />{{
-            codigoCompartilhamento
-          }}</span
-        ></strong
-      >
+      <strong><span id="codigoCompartilhamento">{{ urlCompartilhamento }}<br
+            class="mobile" />{{
+          codigoCompartilhamento
+          }}</span></strong>
     </p>
     <mat-divider></mat-divider>
     <br>
@@ -49,7 +68,7 @@
       </button>
     </div>
   </div>
-  <div *ngIf="!codigoCompartilhamento">
+  <div *ngIf=" iniciouGeracao && !codigoCompartilhamento">
     <p>Aguarde, estamos gerando o link de compartilhamento.</p>
     <br />
     <div class="preloader-wrapper big active">

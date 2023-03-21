@@ -11,11 +11,5 @@ export class AppComponent {
   title = 'Meu Pet Lindo';
   constructor(private router: Router) {
     console.log(environment.APP_VERSION);
-    const url = window.location.href;
-    if (environment.production) {
-      if (url.indexOf('https://') === -1) {
-        window.location.href = 'https://www.meupetlindo.com/';
-      }
-    }
   }
 }

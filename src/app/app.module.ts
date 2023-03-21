@@ -19,6 +19,7 @@ import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/mat
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgChartsModule } from 'ng2-charts';
 
@@ -95,6 +96,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     MatListModule,
     MatDividerModule,
     MatCardModule,
+    MatRadioModule,
     MatGridListModule,
     MatDialogModule,
     AppRoutingModule,
@@ -128,7 +130,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
           monthYearA11yLabel: 'MMMM YYYY',
         },
       }
-    }, 
+    },
   ],
   bootstrap: [AppComponent]
 })
