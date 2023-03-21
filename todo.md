@@ -19,7 +19,7 @@ Show Shared Animals in My Animals List {cm:2022-07-03}
 Antiflea and Vermifuge Migration {cm:2022-07-13}
 PWA {cm:2022-07-13}
 Notification System {cm:2022-07-27}
-Validate inputs
+Validate inputs {start:2023-03-21T16:47:36} {cm:2023-03-21} {duration:09m}
 Change home text {start:2022-07-27T18:04:13} {cm:2022-07-27} {duration:24m}
 Configure default page to not found {start:2022-08-08T10:08:17} {cm:2022-08-08} {duration:1h}
 Autoredirect to https when prod {start:2023-02-25T17:29:11} {cm:2023-02-25} {duration:30m}
