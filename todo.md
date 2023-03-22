@@ -27,3 +27,4 @@ Add observations on records {start:2023-03-21T15:43:26} {cm:2023-03-21} {duratio
 Share permissions {start:2023-03-21T13:03:34} {cm:2023-03-21}{duration:02h37m}
 Notifications bug
 Error on Delete animal {start:2023-03-21T07:13:02} {cm:2023-03-21} {duration:04h}
+Create Vet Appointment {start:2023-03-21T19:08:25}

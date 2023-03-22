@@ -9,6 +9,7 @@ import { MainComponent } from './pages/main/main.component';
 import { MyAnimalsComponent } from './pages/my-animals/my-animals.component';
 import { NewAnimalComponent } from './pages/new-animal/new-animal.component';
 import { VaccineComponent } from './pages/vaccine/vaccine.component';
+import { VetAppointmentComponent } from './pages/vet-appointment/vet-appointment.component';
 import { WeightComponent } from './pages/weight/weight.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'vermifuge', component: DrugsComponent , canActivate: [AuthGuardService]},
   { path: 'vaccine', component: VaccineComponent , canActivate: [AuthGuardService]},
   { path: 'exams', component: ExamsComponent , canActivate: [AuthGuardService]},
+  { path: 'vet', component: VetAppointmentComponent , canActivate: [AuthGuardService]},
   { path: 'share/:codigo', component: AddSharedAnimalComponent },
   { path: '', component: MainComponent },
   { path: '**', pathMatch: 'full', component: MainComponent },

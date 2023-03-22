@@ -56,6 +56,36 @@
   </mat-card-content>
 </mat-card>
 <br />
+
+<mat-card class="card-pages">
+  <mat-card-title>Registro de Consultas</mat-card-title>
+  <mat-card-subtitle>Acompanhe o histórico de consultas do seu bichinho.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-divider></mat-divider><br />
+    <ng-container *ngFor="let item of listaConsulta">
+      <mat-card class="mat-elevation-z5">
+        Local: <strong>{{item.local}}</strong><br />
+        Profissional: <strong>{{item.profissional}}</strong> <br />
+        Data da Consulta:
+        <strong>{{ item.dataConsulta | date: "dd/MM/yyyy" }}</strong>
+        <div *ngIf="item.proximaConsulta">
+          Próxima Consulta/Retorno:
+          <strong>{{ item.proximaConsulta| date: "dd/MM/yyyy" }}</strong>
+        </div>
+        <div *ngIf="item.observacao" style="white-space: pre-line;">
+          <br />
+          <mat-divider></mat-divider>
+          <br />
+          Observações:
+          <br />
+          {{ item.observacao }}
+        </div>
+      </mat-card>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+<br />
+
 <mat-card class="card-pages">
   <mat-card-title>Registro de Exames</mat-card-title>
   <mat-card-subtitle>Acompanhe o histórico de exames.</mat-card-subtitle>

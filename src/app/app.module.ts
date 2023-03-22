@@ -54,6 +54,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NotificationComponent } from './components/notification/notification.component';
 import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
+import { VetAppointmentComponent } from './pages/vet-appointment/vet-appointment.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     AddSharedAnimalComponent,
     NotificationComponent,
     NotificationDialogComponent,
+    VetAppointmentComponent,
   ],
   imports: [
     BrowserModule,

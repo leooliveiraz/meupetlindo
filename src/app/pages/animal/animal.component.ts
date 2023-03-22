@@ -10,6 +10,7 @@ import { PesoService } from 'src/app/services/peso.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { VacinaService } from 'src/app/services/vacina.service';
 import { VermifugoService } from 'src/app/services/vermifugo.service';
+import { VetService } from 'src/app/services/vet.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -37,6 +38,7 @@ export class AnimalComponent implements OnInit {
   listaMedicacao: any = [];
   listaExame: any = [];
   listaAntiPulga: any = [];
+  listaConsulta: any = [];
 
   public innerWidth: any = 900;
   public lineChartData: any[] = [
@@ -80,7 +82,8 @@ export class AnimalComponent implements OnInit {
     private vacinaService: VacinaService,
     private medicacaoService: MedicarService,
     private exameService: ExameService,
-    private toastService: ToastService) { }
+    private toastService: ToastService,
+    private vetService: VetService) { }
 
   ngOnInit(): void {
     this.idAnimal = this.activatedRoute.snapshot.paramMap.get('id');
@@ -100,10 +103,9 @@ export class AnimalComponent implements OnInit {
             () => this.router.navigateByUrl('/my-animals')
           );
       }
-      this.carregarAntiPulgas();
+      this.carregarConsultas();
       this.carregarExames();
       this.carregarPesos();
-      this.carregarVermifugos();
       this.carregarVacinas();
       this.carregarMedicacoes();
     }, erro => {
@@ -157,6 +159,14 @@ export class AnimalComponent implements OnInit {
   carregarMedicacoes() {
     this.medicacaoService.listarPorAnimal(this.idAnimal).subscribe(res => {
       this.listaMedicacao = res;
+      this.carregando = false;
+    }, erro => this.carregando = false);
+  }
+
+  
+  carregarConsultas() {
+    this.vetService.listarPorAnimal(this.idAnimal).subscribe(res => {
+      this.listaConsulta = res;
       this.carregando = false;
     }, erro => this.carregando = false);
   }

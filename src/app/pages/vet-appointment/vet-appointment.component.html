@@ -1,0 +1,110 @@
+<mat-card class="card-pages card">
+  <mat-card-title>Registro de Consultas!</mat-card-title>
+  <mat-card-subtitle
+    >Escolha o seu bichinho, e informe o local, profissional e a data.</mat-card-subtitle
+  >
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <br />
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <mat-form-field class="inputs">
+        <mat-label>Escolha um Animalzinho</mat-label>
+        <mat-select [(ngModel)]="idAnimal" name="idAnimal" required>
+          <mat-option
+            *ngFor="let item of listaAnimais"
+            [value]="item.id"
+            class="option"
+          >
+            <div class="item">
+              <img
+                width="48"
+                class="img"
+                [src]="
+                  item.idArquivo
+                    ? urlImagem + item.idArquivo
+                    : 'assets/icons/animals-allowed.png'
+                "
+                style="align-self: flex-start"
+              />
+              <label>
+                {{ item.nome }}
+              </label>
+            </div>
+          </mat-option>
+        </mat-select> </mat-form-field
+      ><br />
+
+
+      <mat-form-field class="inputs">
+        <mat-label>Qual clinica/consultório você levou o seu bichinho?</mat-label>
+        <input
+          matInput
+          placeholder="Clínica do Pet Lindo, Cobasi ..."
+          required
+          [maxLength]="150"
+          [(ngModel)]="local"
+          name="local"
+          required
+        /> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Qual profissional atendeu seu animalzinho?</mat-label>
+        <input
+          matInput
+          placeholder="Dr. Léo"
+          required
+          [maxLength]="150"
+          [(ngModel)]="profissional"
+          name="profissional"
+          required
+        /> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Quando foi a consulta?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="dataConsulta"
+          name="dataConsulta"
+          required
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> </mat-form-field
+      ><br />
+
+      <mat-form-field class="inputs">
+        <mat-label>Quando será a próxima consulta/retorno?</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker2"
+          [(ngModel)]="proximaConsulta"
+          name="proximaConsulta"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker> </mat-form-field
+      ><br />
+      <mat-form-field class="inputs">
+        <mat-label>Observações:</mat-label>
+        <textarea
+          matInput
+          placeholder="Digite qualquer informação relevante referente à consulta"
+          [maxLength]="150"
+          [(ngModel)]="observacao"
+          name="observacao"
+        ></textarea> </mat-form-field
+      ><br />
+
+      <div>
+        <br />
+        <button mat-raised-button color="primary" type="submit">Salvar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
