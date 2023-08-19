@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SwPush } from '@angular/service-worker';
+import { PushHandleService } from 'src/app/services/push-handle.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { WebPushService } from 'src/app/services/web-push.service';
 import { environment } from 'src/environments/environment';
@@ -15,7 +16,8 @@ export class NotificationDialogComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<NotificationDialogComponent>,
     private swPush: SwPush,
     private webPushService: WebPushService,
-    private toast: ToastService) { }
+    private toast: ToastService,
+    private pushHandleService: PushHandleService) { }
 
   ngOnInit(): void {
   }

@@ -24,7 +24,11 @@ Change home text {start:2022-07-27T18:04:13} {cm:2022-07-27} {duration:24m}
 Configure default page to not found {start:2022-08-08T10:08:17} {cm:2022-08-08} {duration:1h}
 Autoredirect to https when prod {start:2023-02-25T17:29:11} {cm:2023-02-25} {duration:30m}
 Add observations on records {start:2023-03-21T15:43:26} {cm:2023-03-21} {duration:01h01m}
-Share permissions {start:2023-03-21T13:03:34} {cm:2023-03-21}{duration:02h37m}
+Share permissions {cm:2023-03-21}
 Accept Notifications bug {start:2023-03-22T10:17:59} {cm:2023-03-22} {duration:07h14m}
 Error on Delete animal {start:2023-03-21T07:13:02} {cm:2023-03-21} {duration:04h}
 Create Vet Appointment {start:2023-03-21T19:08:25} {cm:2023-03-22} {duration:15h09m}
+Configurar Notificação de Vacina {start:2023-08-19T11:40:41} {cm:2023-08-19} {duration:07h}
+Configurar notificação de medicamentos
+Configurar notificação de retorno em consulta
+Colocar foto nas notificações

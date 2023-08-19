@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { SwPush } from '@angular/service-worker';
 import { faPenToSquare, faShareNodes, faTrash, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { ShareAnimalComponent } from 'src/app/components/share-animal/share-animal.component';
 import { AnimalService } from 'src/app/services/animal.service';
 import { ToastService } from 'src/app/services/toast.service';
-import { WebPushService } from 'src/app/services/web-push.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 
