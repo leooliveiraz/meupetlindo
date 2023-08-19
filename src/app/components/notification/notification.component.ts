@@ -11,6 +11,7 @@ import { NotificationDialogComponent } from '../notification-dialog/notification
 })
 export class NotificationComponent implements OnInit {
 
+  notificationIsOpen = false;
   constructor(private matDialog: MatDialog,
     private swPush: SwPush,
     private webPushService: WebPushService,
@@ -27,9 +28,11 @@ export class NotificationComponent implements OnInit {
         const now = (new Date()).getTime();
         const lastTry = this.webPushService.lastTry();
         const twelveHours = (12 * 60 * 60 * 1000);
-        if (!lastTry || now > (lastTry + twelveHours)) {
-          const newDialog = this.matDialog.open(NotificationDialogComponent);
+        if ((!lastTry || now > (lastTry + twelveHours)) && !this.notificationIsOpen) {
+          this.notificationIsOpen = true;
+          const newDialog = this.matDialog.open(NotificationDialogComponent)
           newDialog.afterClosed().subscribe(() => {
+            this.notificationIsOpen = false;
             this.webPushService.tryingSubscribe();
           })
         }

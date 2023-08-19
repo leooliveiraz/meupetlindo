@@ -25,6 +25,6 @@ Configure default page to not found {start:2022-08-08T10:08:17} {cm:2022-08-08} 
 Autoredirect to https when prod {start:2023-02-25T17:29:11} {cm:2023-02-25} {duration:30m}
 Add observations on records {start:2023-03-21T15:43:26} {cm:2023-03-21} {duration:01h01m}
 Share permissions {start:2023-03-21T13:03:34} {cm:2023-03-21}{duration:02h37m}
-Notifications bug
+Accept Notifications bug {start:2023-03-22T10:17:59} {cm:2023-03-22} {duration:07h14m}
 Error on Delete animal {start:2023-03-21T07:13:02} {cm:2023-03-21} {duration:04h}
-Create Vet Appointment {start:2023-03-21T19:08:25}
+Create Vet Appointment {start:2023-03-21T19:08:25} {cm:2023-03-22} {duration:15h09m}
