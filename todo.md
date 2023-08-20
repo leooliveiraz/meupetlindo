@@ -32,3 +32,6 @@ Configurar Notificação de Vacina {start:2023-08-19T11:40:41} {cm:2023-08-19} {
 Configurar notificação de medicamentos
 Configurar notificação de retorno em consulta
 Colocar foto nas notificações
+Adicionar versão do APP no Sobre {start:2023-08-20T12:31:09}
+Alterar ícone do app
+Mudar imagem dos bixinhos pra .jpg

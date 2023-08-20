@@ -1,0 +1,17 @@
+.card-pages{
+    width: fit-content;
+    margin: auto;
+    max-width: 40vw;
+    width: 614px;
+  }
+  
+  
+  
+  @media (max-width: 600px) {
+    .card-pages{
+      width: fit-content;
+      margin: auto;
+      max-width: 100%;
+    }
+  }
+  
