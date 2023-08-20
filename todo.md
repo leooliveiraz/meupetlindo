@@ -34,5 +34,5 @@ Configurar notificação de retorno em consulta {start:2023-08-20T14:35:56} {cm:
 Colocar foto nas notificações
 Adicionar versão do APP no Sobre {start:2023-08-20T12:31:09} {cm:2023-08-20} {duration:18m}
 Alterar ícone do app
-Mudar imagem dos bixinhos pra .jpg
+Mudar imagem dos bixinhos pra .jpg {start:2023-08-20T19:13:03} {cm:2023-08-20} {duration:19m}
 Atualização de versão Automágica

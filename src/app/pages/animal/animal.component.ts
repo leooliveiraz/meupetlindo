@@ -95,7 +95,7 @@ export class AnimalComponent implements OnInit {
     this.animalService.buscar(this.idAnimal).subscribe(res => {
       this.animal = res;
       if (this.animal.idArquivo) {
-        this.srcImg = `${environment.API_URL}arquivo/${this.animal.idArquivo}`;
+        this.srcImg = `${environment.API_URL}arquivo/${this.animal.idArquivo}.jpg`;
       }
       if (this.animal == null) {
         Swal.fire('Desculpe, não conseguimos encontrar o registro do seu bichinho.', '', 'warning')

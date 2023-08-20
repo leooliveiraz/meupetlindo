@@ -60,6 +60,7 @@ export class MyAnimalsComponent implements OnInit {
     this.carregando = true;
     this.service.listar().subscribe(res => {
       this.lista = res;
+      console.log(this.lista);
       this.carregando = false;
     }, erro => {
       this.carregando = false;

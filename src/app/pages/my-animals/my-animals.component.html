@@ -10,24 +10,14 @@
     <div class="" *ngIf="carregando">
       Por favor aguarde, estamos carregando as informações dos seus bichinhos.
     </div>
-    <div
-      *ngIf="(lista != null && lista.length> 0) ||
+    <div *ngIf="(lista != null && lista.length> 0) ||
       (listaCompartilhados != null && listaCompartilhados.length > 0)">
       <div *ngFor="let item of lista">
         <div class="item">
           <div class="animal-info" [routerLink]="['/animal/' + item.id]">
-            <img
-              width="48"
-              class="img"
-              [src]="
-              item.srcImg
-              ? item.srcImg
-              : item.idArquivo
-              ? urlImagem + item.idArquivo
-              : 'assets/icons/animals-allowed.png'
-              "
-              style="align-self: flex-start"
-              />
+            <img width="48" class="img" [src]="item.idArquivo ? 
+                  urlImagem + item.idArquivo +'.jpg' : 'assets/icons/animals-allowed.png'
+              " style="align-self: flex-start" />
             <div class="item-name" [routerLink]="['/animal/' + item.id]">
               {{ item.nome }}
             </div>
@@ -37,8 +27,7 @@
               item.id]">
               <fa-icon [icon]="editIcon" size="lg"></fa-icon>
             </button>
-            <button mat-icon-button color="accent"
-              (click)="abrirCompartilhamento(item)">
+            <button mat-icon-button color="accent" (click)="abrirCompartilhamento(item)">
               <fa-icon [icon]="shareIcon" size="lg"></fa-icon>
             </button>
             <button mat-icon-button color="error" (click)="excluir(item.id)">
@@ -52,18 +41,11 @@
       <div *ngFor="let item of listaCompartilhados">
         <div class="item">
           <div class="animal-info" [routerLink]="['/animal/' + item.id]">
-            <img
-              width="48"
-              class="img"
-              [src]="
-              item.srcImg
-              ? item.srcImg
-              : item.idArquivo
-              ? urlImagem + item.idArquivo
+            <img width="48" class="img" [src]="
+              item.idArquivo
+              ? urlImagem + item.idArquivo + '.jpg'
               : 'assets/icons/animals-allowed.png'
-              "
-              style="align-self: flex-start"
-              />
+              " style="align-self: flex-start" />
             <div class="item-name" [routerLink]="['/animal/' + item.id]">
               {{ item.nome }}
             </div>
@@ -78,42 +60,9 @@
         <mat-divider></mat-divider>
       </div>
 
-      <!-- <ng-container *ngFor="let item of listaCompartilhados">
-        <mat-list-item>
-          <img
-            matListAvatar
-            width="48"
-            class="img"
-            [src]="
-              item.srcImg
-                ? item.srcImg
-                : item.idArquivo
-                ? urlImagem + item.idArquivo
-                : 'assets/icons/animals-allowed.png'
-            "
-          />
-
-          <div class="pointer animal" [routerLink]="['/animal/' + item.id]">
-            <span> {{ item.nome }} </span>
-            <div class="chip chip-separator yellow purple-text darken-4-text">
-              Compartilhado
-            </div>
-          </div>
-
-          <a
-            [routerLink]="['/animal/' + item.id]"
-            class="deep-purple-text text-darken-4 icone"
-            mz-secondary-content
-          >
-            <fa-icon [icon]="openIcon"></fa-icon
-          ></a>
-        </mat-list-item>
-      </ng-container> -->
     </div>
 
-    <div
-      class="white-text text-darken-1 center-align"
-      *ngIf="!carregando && lista.length === 0">
+    <div class="white-text text-darken-1 center-align" *ngIf="!carregando && lista.length === 0">
       <p>
         Você ainda não possui nenhum animalzinho cadastrado, clique no botão
         abaixo para cadastrar.
