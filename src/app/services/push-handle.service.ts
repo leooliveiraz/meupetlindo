@@ -9,10 +9,14 @@ export class PushHandleService {
   constructor(private router: Router) { }
 
   handleWebPushMessages(message: any){
-    console.log(message)
+    let idAnimal = 0
     switch (message.action) {
       case "aviso-vacina":
-        const idAnimal = message.notification.data.idAnimal;
+        idAnimal = message.notification.data.idAnimal;
+        this.router.navigateByUrl(`/animal/${idAnimal}`);
+        break;
+      case "aviso-medicacao":
+        idAnimal = message.notification.data.idAnimal;
         this.router.navigateByUrl(`/animal/${idAnimal}`);
         break;
     
