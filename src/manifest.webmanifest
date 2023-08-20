@@ -6,6 +6,7 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "capture_links": "existing-client-navigate",
   "lang" : "Portuguese",
   "icons": [
     {

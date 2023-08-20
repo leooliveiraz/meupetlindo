@@ -29,9 +29,10 @@ Accept Notifications bug {start:2023-03-22T10:17:59} {cm:2023-03-22} {duration:0
 Error on Delete animal {start:2023-03-21T07:13:02} {cm:2023-03-21} {duration:04h}
 Create Vet Appointment {start:2023-03-21T19:08:25} {cm:2023-03-22} {duration:15h09m}
 Configurar Notificação de Vacina {start:2023-08-19T11:40:41} {cm:2023-08-19} {duration:07h}
-Configurar notificação de medicamentos {start:2023-08-20T12:50:11}
-Configurar notificação de retorno em consulta
+Configurar notificação de medicamentos {start:2023-08-20T12:50:11} {cm:2023-08-20} {duration:11m}
+Configurar notificação de retorno em consulta {start:2023-08-20T14:35:56} {cm:2023-08-20} {duration:01h04m}
 Colocar foto nas notificações
 Adicionar versão do APP no Sobre {start:2023-08-20T12:31:09} {cm:2023-08-20} {duration:18m}
 Alterar ícone do app
 Mudar imagem dos bixinhos pra .jpg
+Atualização de versão Automágica

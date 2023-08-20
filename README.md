@@ -13,6 +13,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build --configuration=pwa` to build the project in pwa enviroment. The build artifacts will be stored in the `dist/` directory.
+
 
 ## Running unit tests
 
