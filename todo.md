@@ -33,6 +33,6 @@ Configurar notificação de medicamentos {start:2023-08-20T12:50:11} {cm:2023-08
 Configurar notificação de retorno em consulta {start:2023-08-20T14:35:56} {cm:2023-08-20} {duration:01h04m}
 Colocar foto nas notificações
 Adicionar versão do APP no Sobre {start:2023-08-20T12:31:09} {cm:2023-08-20} {duration:18m}
-Alterar ícone do app
+Alterar ícone do app {start:2023-08-20T19:40:09} {cm:2023-08-20} {duration:01h18m}
 Mudar imagem dos bixinhos pra .jpg {start:2023-08-20T19:13:03} {cm:2023-08-20} {duration:19m}
 Atualização de versão Automágica
