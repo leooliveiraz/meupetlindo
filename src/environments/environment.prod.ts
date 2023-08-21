@@ -6,5 +6,5 @@ export const environment = {
   APP_URL: 'https://www.meupetlindo.com/',
   VAPID_PUBLIC_KEY: "BJIEHJOP5D2qNYFVA23FXzd6yLGvG3mRh7lr5mq8HjNvlucsIDo_AeIP-xc-IfBLiFHZkuEWMehY6XapWJsaG8k",
   APP_BASE_HREF: '/',
-  APP_VERSION: "0.0.28"
+  APP_VERSION: "0.0.29"
 };
